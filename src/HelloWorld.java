@@ -16,6 +16,15 @@ public class HelloWorld {
         System.out.println(++x);
         System.out.println(x);
 
-        String class = "Today's class covered Java data types and variables.";
+        // Don't do this, reserved word
+//        String class = "Today's class covered Java data types and variables.";
+
+        // Gives ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer
+//        String theNumberThree = "three";
+//        Object o = theNumberThree;
+//        int three = (int) o;
+
+//        incompatible types: java.lang.String cannot be converted to int
+//        int three = (int) "three";
     }
 }
