@@ -6,7 +6,10 @@ public class HelloWorld {
         int myFavoriteNumber = 4;
         System.out.println(myFavoriteNumber);
 
-        String myString = 3.14159;
+        String myString = "3.14159";
         System.out.println(myString);
+
+        long onePointTwentyOneGigaWatts;
+        System.out.println(onePointTwentyOneGigaWatts);
     }
 }
