@@ -9,7 +9,7 @@ public class HelloWorld {
         String myString = "3.14159";
         System.out.println(myString);
 
-        long myNumber = 3.14;
+        long myNumber = 123L;
         System.out.println(myNumber);
     }
 }
