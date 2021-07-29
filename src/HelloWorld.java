@@ -6,7 +6,7 @@ public class HelloWorld {
         int myFavoriteNumber = 4;
         System.out.println(myFavoriteNumber);
 
-        String myString = 'x';
+        String myString = 3.14159;
         System.out.println(myString);
     }
 }
