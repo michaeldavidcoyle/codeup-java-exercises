@@ -51,5 +51,14 @@ public class HelloWorld {
 //        int y = 2;
 //        x /= y;
 //        y -= x;
+
+        // What happens if you assign a value to a numerical variable that is larger (or smaller) than
+        // the type can hold? What happens if you increment a numeric variable past the type's capacity?
+        int n = Integer.MAX_VALUE + 1;
+        System.out.println(n); // goes negative: -2147483648
+
+        int m = Integer.MAX_VALUE;
+        m++;
+        System.out.println(m); // also goes negative: -2147483648
     }
 }
