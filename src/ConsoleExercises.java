@@ -26,10 +26,24 @@ public class ConsoleExercises {
 
         // Prompt a user to enter a sentence, then store that sentence in a String variable using the next method.
         // Then, display that sentence back to the user.
-        System.out.print("Enter a sentence: ");
+//        System.out.print("Enter a sentence: ");
+//
+//        String userSentence = scanner.nextLine();
+//
+//        System.out.println(userSentence);
 
-        String userSentence = scanner.nextLine();
+        // Prompt the user to enter values of length and width of a classroom at Codeup.
+        //Use the nextLine method to get user input and parse the resulting string to a numeric type.
+        System.out.print("Enter length: ");
+        String lengthString = scanner.nextLine();
 
-        System.out.println(userSentence);
+        System.out.print("Enter width: ");
+        String widthString = scanner.nextLine();
+
+        int length = Integer.parseInt(lengthString);
+        int width = Integer.parseInt(widthString);
+
+        System.out.format("area: %d%n", length * width);
+        System.out.format("perimeter: %d%n", (length * 2) + (width * 2));
     }
 }
