@@ -16,12 +16,20 @@ public class ConsoleExercises {
 
         // Prompt user to enter 3 words and store each in a separate variable.
         // Display them in the console, each on a newline.
-        System.out.print("Enter 3 words: ");
+//        System.out.print("Enter 3 words: ");
+//
+//        String userWordOne = scanner.next();
+//        String userWordTwo = scanner.next();
+//        String userWordThree = scanner.next();
+//
+//        System.out.format("%s%n%s%n%s%n", userWordOne, userWordTwo, userWordThree);
 
-        String userWordOne = scanner.next();
-        String userWordTwo = scanner.next();
-        String userWordThree = scanner.next();
+        // Prompt a user to enter a sentence, then store that sentence in a String variable using the next method.
+        // Then, display that sentence back to the user.
+        System.out.print("Enter a sentence: ");
 
-        System.out.format("%s%n%s%n%s%n", userWordOne, userWordTwo, userWordThree);
+        String userSentence = scanner.nextLine();
+
+        System.out.println(userSentence);
     }
 }
