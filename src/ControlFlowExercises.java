@@ -9,11 +9,11 @@ public class ControlFlowExercises {
         // 16
         // 256
         // 65536
-        int fives = 100;
+        long number = 2L;
 
         do {
-            System.out.println(fives);
-            fives -= 5;
-        } while (fives >= -10);
+            System.out.println(number);
+            number *= number;
+        } while (number < 1000000);
     }
 }
