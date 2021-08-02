@@ -8,6 +8,7 @@ public class ConsoleExercises {
 
         // Prompt user to enter an integer and store that value in an int variable using the nextInt method.
         Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\n");
 
 //        System.out.print("Enter an integer: ");
 //        int userInteger = scanner.nextInt();
@@ -35,23 +36,26 @@ public class ConsoleExercises {
         // Prompt the user to enter values of length and width of a classroom at Codeup.
         //Use the nextLine method to get user input and parse the resulting string to a numeric type.
         System.out.print("Enter length: ");
-        String lengthString = scanner.nextLine();
+//        String lengthString = scanner.nextLine();
+        float length = scanner.nextFloat();
 
         System.out.print("Enter width: ");
-        String widthString = scanner.nextLine();
+//        String widthString = scanner.nextLine();
+        float width = scanner.nextFloat();
 
         System.out.print("Enter height: ");
-        String heightString = scanner.nextLine();
+//        String heightString = scanner.nextLine();
+        float height = scanner.nextFloat();
 
 //        int length = Integer.parseInt(lengthString);
 //        int width = Integer.parseInt(widthString);
 
-        float length = Float.parseFloat(lengthString);
-        float width = Float.parseFloat(widthString);
-        float height = Float.parseFloat(heightString);
+//        float length = Float.parseFloat(lengthString);
+//        float width = Float.parseFloat(widthString);
+//        float height = Float.parseFloat(heightString);
 
-        System.out.format("area: %.1f%n", length * width);
-        System.out.format("volume: %.1f%n", length * width * height);
-        System.out.format("perimeter: %.1f%n", (length * 2) + (width * 2));
+        System.out.format("area: %.2f%n", length * width);
+        System.out.format("volume: %.2f%n", length * width * height);
+        System.out.format("perimeter: %.2f%n", (length * 2) + (width * 2));
     }
 }
