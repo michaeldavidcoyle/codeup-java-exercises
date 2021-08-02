@@ -40,10 +40,18 @@ public class ConsoleExercises {
         System.out.print("Enter width: ");
         String widthString = scanner.nextLine();
 
-        int length = Integer.parseInt(lengthString);
-        int width = Integer.parseInt(widthString);
+        System.out.print("Enter height: ");
+        String heightString = scanner.nextLine();
 
-        System.out.format("area: %d%n", length * width);
-        System.out.format("perimeter: %d%n", (length * 2) + (width * 2));
+//        int length = Integer.parseInt(lengthString);
+//        int width = Integer.parseInt(widthString);
+
+        float length = Float.parseFloat(lengthString);
+        float width = Float.parseFloat(widthString);
+        float height = Float.parseFloat(heightString);
+
+        System.out.format("area: %.1f%n", length * width);
+        System.out.format("volume: %.1f%n", length * width * height);
+        System.out.format("perimeter: %.1f%n", (length * 2) + (width * 2));
     }
 }
