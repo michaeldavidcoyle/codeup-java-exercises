@@ -23,6 +23,10 @@ public class MethodsExercises {
         return number * multiplier;
     }
 
+    public static int divide(int dividend, int divisor) {
+        return dividend / divisor;
+    }
+
     public static void main(String[] args) {
         int operandOne = 13;
         int operandTwo = 7;
@@ -38,5 +42,12 @@ public class MethodsExercises {
         int product = multiply(operandOne, operandTwo);
 
         System.out.printf("%d * %d = %d%n", operandOne, operandTwo, product);
+
+        operandOne = 42;
+        operandTwo = 6;
+
+        int quotient = divide(operandOne, operandTwo);
+
+        System.out.printf("%d / %d = %d%n", operandOne, operandTwo, quotient);
     }
 }
