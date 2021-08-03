@@ -19,6 +19,10 @@ public class MethodsExercises {
         return numberOne - numberTwo;
     }
 
+    public static int multiply(int number, int multiplier) {
+        return number * multiplier;
+    }
+
     public static void main(String[] args) {
         int operandOne = 13;
         int operandTwo = 7;
@@ -30,5 +34,9 @@ public class MethodsExercises {
         int difference = subtract(operandOne, operandTwo);
 
         System.out.printf("%d - %d = %d%n", operandOne, operandTwo, difference);
+
+        int product = multiply(operandOne, operandTwo);
+
+        System.out.printf("%d * %d = %d%n", operandOne, operandTwo, product);
     }
 }
