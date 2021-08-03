@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Bob {
     public static void main(String[] args) {
         /*
@@ -8,5 +10,7 @@ public class Bob {
         * He answers 'Whatever.' to anything else.
         * Write the Java code necessary so that a user of your command line application can have a conversation with Bob.
         */
+
+        Scanner input = new Scanner(System.in);
     }
 }
