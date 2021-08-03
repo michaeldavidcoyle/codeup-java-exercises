@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ControlFlowExercises {
@@ -19,20 +20,27 @@ public class ControlFlowExercises {
         //  5      | 25      | 125
         Scanner scanner = new Scanner(System.in);
 
+        boolean userWantsToContinue = false;
+
         System.out.println("Table of Squares and Cubes");
-        System.out.print("Please enter maximum integer value: ");
-        int max = scanner.nextInt();
+        do {
+            System.out.print("Please enter maximum integer value: ");
+            int max = scanner.nextInt();
 
-        int square;
-        int cube;
+            int square;
+            int cube;
 
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | -----");
-        for (int i = 1; i <= max; i++) {
-            square = i * i;
-            cube = square * i;
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for (int i = 1; i <= max; i++) {
+                square = i * i;
+                cube = square * i;
 
-            System.out.printf("%-7d| %-7d | %-5d%n", i, square, cube);
-        }
+                System.out.printf("%-7d| %-7d | %-5d%n", i, square, cube);
+            }
+
+            System.out.print("Do you want to go again? ");
+            userWantsToContinue = scanner.next().toLowerCase().contains("y");
+        } while (userWantsToContinue);
     }
 }
