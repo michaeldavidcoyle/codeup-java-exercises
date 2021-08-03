@@ -15,7 +15,20 @@ public class MethodsExercises {
         return numberOne + numberTwo;
     }
 
+    public static int subtract(int numberOne, int numberTwo) {
+        return numberOne - numberTwo;
+    }
+
     public static void main(String[] args) {
-        System.out.println(add(13, 7));
+        int operandOne = 13;
+        int operandTwo = 7;
+
+        int sum = add(operandOne, operandTwo);
+
+        System.out.printf("%d + %d = %d%n", operandOne, operandTwo, sum);
+
+        int difference = subtract(operandOne, operandTwo);
+
+        System.out.printf("%d - %d = %d%n", operandOne, operandTwo, difference);
     }
 }
