@@ -8,6 +8,8 @@ public class StringExercise {
 
         // We don't need no education
         // We don't need no thought control
+        String need = "We don't need no education\nWe don't need no thought control";
+        System.out.println(need);
 
         // Check "this" out!, "s inside of "s!
 
