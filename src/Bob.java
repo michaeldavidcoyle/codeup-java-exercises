@@ -19,9 +19,7 @@ public class Bob {
             System.out.print("Would you like to talk to Bob? [y/n] ");
             String userResponse = input.next();
 
-            if (!userResponse.toLowerCase().contains("y")) {
-                userWantsToConinue = false;
-            }
+            userWantsToConinue = userResponse.toLowerCase().contains("y");
         } while (userWantsToConinue);
     }
 }
