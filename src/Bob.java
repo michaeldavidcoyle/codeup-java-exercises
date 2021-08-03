@@ -12,5 +12,16 @@ public class Bob {
         */
 
         Scanner input = new Scanner(System.in);
+
+        boolean userWantsToConinue = true;
+
+        do {
+            System.out.print("Would you like to talk to Bob? [y/n] ");
+            String userResponse = input.next();
+
+            if (!userResponse.toLowerCase().contains("y")) {
+                userWantsToConinue = false;
+            }
+        } while (userWantsToConinue);
     }
 }
