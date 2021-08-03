@@ -15,6 +15,7 @@ public class ControlFlowExercises {
         // C : 79 - 67
         // D : 66 - 60
         // F : 59 - 0
+        // Bonus - Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+)
         Scanner scanner = new Scanner(System.in);
 
         boolean userWantsToContinue = false;
@@ -24,18 +25,34 @@ public class ControlFlowExercises {
             System.out.print("Please enter a numerical grade from 0 to 100: ");
             int numericGrade = scanner.nextInt();
 
-            char letterGrade;
+            String letterGrade;
 
-            if (numericGrade >= 88) {
-                letterGrade = 'A';
+            if (numericGrade >= 97) {
+                letterGrade = "A+";
+            } else if (numericGrade >= 92) {
+                letterGrade = "A";
+            } else if (numericGrade >= 88) {
+                letterGrade = "A-";
+            } else if (numericGrade >= 85) {
+                letterGrade = "B+";
+            } else if (numericGrade >= 83) {
+                letterGrade = "B";
             } else if (numericGrade >= 80) {
-                letterGrade = 'B';
+                letterGrade = "B-";
+            } else if (numericGrade >= 76) {
+                letterGrade = "C+";
+            } else if (numericGrade >= 71) {
+                letterGrade = "C";
             } else if (numericGrade >= 67) {
-                letterGrade = 'C';
+                letterGrade = "C-";
+            } else if (numericGrade >= 65) {
+                letterGrade = "D+";
+            } else if (numericGrade >= 62) {
+                letterGrade = "D";
             } else if (numericGrade >= 60) {
-                letterGrade = 'D';
+                letterGrade = "D-";
             } else {
-                letterGrade = 'F';
+                letterGrade = "F";
             }
 
             System.out.printf("A numeric grade of %d%% is a letter grade of %s%n", numericGrade, letterGrade);
