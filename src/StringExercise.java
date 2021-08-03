@@ -12,6 +12,8 @@ public class StringExercise {
         System.out.println(need);
 
         // Check "this" out!, "s inside of "s!
+        String checkThisOut = "Check \"this\" out!, \"s inside of \"s!";
+        System.out.println(checkThisOut);
 
         // In windows, the main drive is usually C:\
 
