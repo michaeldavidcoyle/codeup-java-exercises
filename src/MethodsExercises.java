@@ -11,7 +11,11 @@ public class MethodsExercises {
     * Food for thought: What happens if we try to divide by zero? What should happen?
     */
 
-    public static void main(String[] args) {
+    public static int add(int numberOne, int numberTwo) {
+        return numberOne + numberTwo;
+    }
 
+    public static void main(String[] args) {
+        System.out.println(add(13, 7));
     }
 }
