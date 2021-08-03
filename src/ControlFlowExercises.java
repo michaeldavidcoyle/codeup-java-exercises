@@ -3,41 +3,42 @@ import java.util.Scanner;
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
-        // 3. Display a table of powers.
-        // Prompt the user to enter an integer.
-        // Display a table of squares and cubes from 1 to the value entered.
-        // Ask if the user wants to continue.
-        // Assume that the user will enter valid data.
-        // Only continue if the user agrees to.
-        // What number would you like to go up to? 5
-        // Here is your table!
-        //  number | squared | cubed
-        //  ------ | ------- | -----
-        //  1      | 1       | 1
-        //  2      | 4       | 8
-        //  3      | 9       | 27
-        //  4      | 16      | 64
-        //  5      | 25      | 125
+        // 4. Convert given number grades into letter grades.
+        // Prompt the user for a numerical grade from 0 to 100.
+        // Display the corresponding letter grade.
+        // Prompt the user to continue.
+        // Assume that the user will enter valid integers for the grades.
+        // The application should only continue if the user agrees to.
+        // Grade Ranges:
+        // A : 100 - 88
+        // B : 87 - 80
+        // C : 79 - 67
+        // D : 66 - 60
+        // F : 59 - 0
         Scanner scanner = new Scanner(System.in);
 
         boolean userWantsToContinue = false;
 
-        System.out.println("Table of Squares and Cubes");
+        System.out.println("Convert number grades to letter grades.");
         do {
-            System.out.print("Please enter maximum integer value: ");
-            int max = scanner.nextInt();
+            System.out.print("Please enter a numerical grade from 0 to 100: ");
+            int numericGrade = scanner.nextInt();
 
-            int square;
-            int cube;
+            char letterGrade;
 
-            System.out.println("number | squared | cubed");
-            System.out.println("------ | ------- | -----");
-            for (int i = 1; i <= max; i++) {
-                square = i * i;
-                cube = square * i;
-
-                System.out.printf("%-7d| %-7d | %-5d%n", i, square, cube);
+            if (numericGrade >= 88) {
+                letterGrade = 'A';
+            } else if (numericGrade >= 80) {
+                letterGrade = 'B';
+            } else if (numericGrade >= 67) {
+                letterGrade = 'C';
+            } else if (numericGrade >= 60) {
+                letterGrade = 'D';
+            } else {
+                letterGrade = 'F';
             }
+
+            System.out.printf("A numeric grade of %d%% is a letter grade of %s%n", numericGrade, letterGrade);
 
             System.out.print("Do you want to go again? ");
             userWantsToContinue = scanner.next().toLowerCase().contains("y");
