@@ -15,8 +15,10 @@ public class Bob {
 
         boolean userWantsToConinue = true;
 
+        System.out.println("Talk to Bob!");
+
         do {
-            System.out.print("Talk to Bob: ");
+            System.out.print("You: ");
             String userStatement = input.nextLine();
 
             String bobsAnswer = "Whatever.";
@@ -29,7 +31,7 @@ public class Bob {
                 bobsAnswer = "Fine. Be that way!";
             }
 
-            System.out.println(bobsAnswer);
+            System.out.printf("Bob: %s%n", bobsAnswer);
         } while (userWantsToConinue);
     }
 }
