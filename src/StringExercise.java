@@ -20,5 +20,7 @@ public class StringExercise {
         System.out.println(windowsMainDrive);
 
         // I can do backslashes \, double backslashes \\, and the amazing triple backslash \\\!
+        String backslashesGalore = "I can do backslashes \\, double backslashes \\\\, and the amazing triple backslash \\\\\\!";
+        System.out.println(backslashesGalore);
     }
 }
