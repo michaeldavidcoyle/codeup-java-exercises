@@ -15,7 +15,7 @@ public class Bob {
 
         boolean userWantsToConinue = true;
 
-        System.out.println("Talk to Bob!");
+        System.out.println("Talk to Bob! [type 'end' to quit]");
 
         do {
             System.out.print("You: ");
@@ -29,6 +29,8 @@ public class Bob {
                 bobsAnswer = "Whoa, chill out!";
             } else if (userStatement.equals("")) {
                 bobsAnswer = "Fine. Be that way!";
+            } else if (userStatement.equals("end")) {
+                userWantsToConinue = false;
             }
 
             System.out.printf("Bob: %s%n", bobsAnswer);
