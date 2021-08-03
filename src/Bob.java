@@ -16,10 +16,20 @@ public class Bob {
         boolean userWantsToConinue = true;
 
         do {
-            System.out.print("Would you like to talk to Bob? [y/n] ");
-            String userResponse = input.next();
+            System.out.print("Talk to Bob: ");
+            String userStatement = input.nextLine();
 
-            userWantsToConinue = userResponse.toLowerCase().contains("y");
+            String bobsAnswer = "Whatever.";
+
+            if (userStatement.endsWith("?")) {
+                bobsAnswer = "Sure.";
+            } else if (userStatement.endsWith("!")) {
+                bobsAnswer = "Whoa, chill out!";
+            } else if (userStatement.equals("")) {
+                bobsAnswer = "Fine. Be that way!";
+            }
+
+            System.out.println(bobsAnswer);
         } while (userWantsToConinue);
     }
 }
