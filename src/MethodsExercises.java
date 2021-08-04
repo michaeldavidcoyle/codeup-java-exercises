@@ -23,7 +23,7 @@ public class MethodsExercises {
         return factor * multiplier;
     }
 
-    public static int divide(int dividend, int divisor) {
+    public static float divide(float dividend, float divisor) {
         return dividend / divisor;
     }
 
@@ -43,12 +43,11 @@ public class MethodsExercises {
 
         System.out.printf("%d * %d = %d%n", operandOne, operandTwo, product);
 
-        operandOne = 42;
-        operandTwo = 0;
-        // throws an ArithmeticException: / by zero, not sure how to deal with this since the method must return an int
+        float dividend = 42f;
+        float divisor = 17f;
 
-        int quotient = divide(operandOne, operandTwo);
+        float quotient = divide(dividend, divisor);
 
-        System.out.printf("%d / %d = %d%n", operandOne, operandTwo, quotient);
+        System.out.printf("%.3f / %.3f = %.3f%n", dividend, divisor, quotient);
     }
 }
