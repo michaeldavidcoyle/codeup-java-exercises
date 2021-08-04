@@ -31,6 +31,10 @@ public class MethodsExercises {
         return factor * multiplier;
     }
 
+    public static float multiply(float factor, float multiplier) {
+        return factor * multiplier;
+    }
+
     public static float divide(float dividend, float divisor) {
         return dividend / divisor;
     }
@@ -45,24 +49,26 @@ public class MethodsExercises {
         int sum = add(operandOne, operandTwo);
         float floatSum = add(operandLeft, operandRight);
 
-        System.out.printf("Adding ints: %d + %d = %d%n", operandOne, operandTwo, sum);
-        System.out.printf("Adding floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatSum);
+        System.out.printf("Add ints: %d + %d = %d%n", operandOne, operandTwo, sum);
+        System.out.printf("Add floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatSum);
 
         int difference = subtract(operandOne, operandTwo);
         float floatDifference = subtract(operandLeft, operandRight);
 
-        System.out.printf("Subtracting ints: %d - %d = %d%n", operandOne, operandTwo, difference);
-        System.out.printf("Subtracting floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatDifference);
+        System.out.printf("Subtract ints: %d - %d = %d%n", operandOne, operandTwo, difference);
+        System.out.printf("Subtract floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatDifference);
 
         int product = multiply(operandOne, operandTwo);
+        float floatProduct = multiply(operandLeft, operandRight);
 
-        System.out.printf("%d * %d = %d%n", operandOne, operandTwo, product);
+        System.out.printf("Multiply ints: %d * %d = %d%n", operandOne, operandTwo, product);
+        System.out.printf("Multiply floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatProduct);
 
         float dividend = 42f;
         float divisor = 17f;
 
         float quotient = divide(dividend, divisor);
 
-        System.out.printf("%.3f / %.3f = %.3f%n", dividend, divisor, quotient);
+        System.out.printf("Divide: %.3f / %.3f = %.3f%n", dividend, divisor, quotient);
     }
 }
