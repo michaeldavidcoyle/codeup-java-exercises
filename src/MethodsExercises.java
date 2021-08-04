@@ -44,7 +44,8 @@ public class MethodsExercises {
         System.out.printf("%d * %d = %d%n", operandOne, operandTwo, product);
 
         operandOne = 42;
-        operandTwo = 6;
+        operandTwo = 0;
+        // throws an ArithmeticException: / by zero, not sure how to deal with this since the method must return an int
 
         int quotient = divide(operandOne, operandTwo);
 
