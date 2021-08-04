@@ -39,6 +39,10 @@ public class MethodsExercises {
         return dividend / divisor;
     }
 
+    public static int modulus(int operand, int divisor) {
+        return operand % divisor;
+    }
+
     public static void main(String[] args) {
         int operandOne = 13;
         int operandTwo = 7;
@@ -70,5 +74,9 @@ public class MethodsExercises {
         float quotient = divide(dividend, divisor);
 
         System.out.printf("Divide: %.3f / %.3f = %.3f%n", dividend, divisor, quotient);
+
+        int remainder = modulus(operandOne, operandTwo);
+
+        System.out.printf("Modulus: %d %% %d = %d%n", operandOne, operandTwo, remainder);
     }
 }
