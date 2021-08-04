@@ -11,16 +11,16 @@ public class MethodsExercises {
     * Food for thought: What happens if we try to divide by zero? What should happen?
     */
 
-    public static int add(int numberOne, int numberTwo) {
-        return numberOne + numberTwo;
+    public static int add(int addendLeft, int addendRight) {
+        return addendLeft + addendRight;
     }
 
-    public static int subtract(int numberOne, int numberTwo) {
-        return numberOne - numberTwo;
+    public static int subtract(int operandLeft, int operandRight) {
+        return operandLeft - operandRight;
     }
 
-    public static int multiply(int number, int multiplier) {
-        return number * multiplier;
+    public static int multiply(int factor, int multiplier) {
+        return factor * multiplier;
     }
 
     public static int divide(int dividend, int divisor) {
