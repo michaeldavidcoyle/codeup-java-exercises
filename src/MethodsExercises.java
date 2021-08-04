@@ -27,12 +27,23 @@ public class MethodsExercises {
         return operandLeft - operandRight;
     }
 
-    public static int multiply(int factor, int multiplier) {
-        return factor * multiplier;
-    }
+//    public static int multiply(int factor, int multiplier) {
+//        return factor * multiplier;
+//    }
 
     public static float multiply(float factor, float multiplier) {
         return factor * multiplier;
+    }
+
+    // Bonus: multiplication method without the * operator
+    public static int multiply(int factor, int multiplier) {
+        int product = 0;
+
+        for (int i = 0; i < multiplier ; i++) {
+            product += factor;
+        }
+
+        return product;
     }
 
     public static float divide(float dividend, float divisor) {
