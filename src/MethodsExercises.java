@@ -36,14 +36,21 @@ public class MethodsExercises {
     }
 
     // Bonus: multiplication method without the * operator
+//    public static int multiply(int factor, int multiplier) {
+//        int product = 0;
+//
+//        for (int i = 0; i < multiplier ; i++) {
+//            product += factor;
+//        }
+//
+//        return product;
+//    }
+
+    // Bonus: recursive multiply
     public static int multiply(int factor, int multiplier) {
-        int product = 0;
+        if (multiplier == 1) return factor;
 
-        for (int i = 0; i < multiplier ; i++) {
-            product += factor;
-        }
-
-        return product;
+        return factor + multiply(factor, multiplier - 1);
     }
 
     public static float divide(float dividend, float divisor) {
