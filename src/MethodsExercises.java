@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodsExercises {
     /*
     * Create four separate methods. Each will perform an arithmetic operation:
@@ -61,6 +63,19 @@ public class MethodsExercises {
         return operand % divisor;
     }
 
+    public static int getInteger(int min, int max) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInt = input.nextInt();
+
+        if (userInt < min || userInt > max) {
+            return getInteger(min, max);
+        }
+
+        return userInt;
+    }
+
     public static void main(String[] args) {
         int operandOne = 13;
         int operandTwo = 7;
@@ -96,5 +111,7 @@ public class MethodsExercises {
         int remainder = modulus(operandOne, operandTwo);
 
         System.out.printf("Modulus: %d %% %d = %d%n", operandOne, operandTwo, remainder);
+
+        System.out.printf("You entered: %d%n", getInteger(1, 10));
     }
 }
