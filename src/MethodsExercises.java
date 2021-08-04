@@ -15,6 +15,10 @@ public class MethodsExercises {
         return addendLeft + addendRight;
     }
 
+    public static float add(float addendLeft, float addendRight) {
+        return addendLeft + addendRight;
+    }
+
     public static int subtract(int operandLeft, int operandRight) {
         return operandLeft - operandRight;
     }
@@ -31,9 +35,14 @@ public class MethodsExercises {
         int operandOne = 13;
         int operandTwo = 7;
 
-        int sum = add(operandOne, operandTwo);
+        float operandLeft = 4.25f;
+        float operandRight = 2.97f;
 
-        System.out.printf("%d + %d = %d%n", operandOne, operandTwo, sum);
+        int sum = add(operandOne, operandTwo);
+        float floatSum = add(operandLeft, operandRight);
+
+        System.out.printf("Adding ints: %d + %d = %d%n", operandOne, operandTwo, sum);
+        System.out.printf("Adding floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatSum);
 
         int difference = subtract(operandOne, operandTwo);
 
