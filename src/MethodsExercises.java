@@ -66,7 +66,7 @@ public class MethodsExercises {
     public static int getInteger(int min, int max) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter a number between 1 and 10: ");
+        System.out.print("Enter a number between " + min + " and " + max + ": ");
         int userInt = input.nextInt();
 
         if (userInt < min || userInt > max) {
@@ -112,6 +112,6 @@ public class MethodsExercises {
 
         System.out.printf("Modulus: %d %% %d = %d%n", operandOne, operandTwo, remainder);
 
-        System.out.printf("You entered: %d%n", getInteger(1, 10));
+        System.out.printf("You entered: %d%n", getInteger(0, 99));
     }
 }
