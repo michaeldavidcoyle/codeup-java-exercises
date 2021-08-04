@@ -23,6 +23,10 @@ public class MethodsExercises {
         return operandLeft - operandRight;
     }
 
+    public static float subtract(float operandLeft, float operandRight) {
+        return operandLeft - operandRight;
+    }
+
     public static int multiply(int factor, int multiplier) {
         return factor * multiplier;
     }
@@ -45,8 +49,10 @@ public class MethodsExercises {
         System.out.printf("Adding floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatSum);
 
         int difference = subtract(operandOne, operandTwo);
+        float floatDifference = subtract(operandLeft, operandRight);
 
-        System.out.printf("%d - %d = %d%n", operandOne, operandTwo, difference);
+        System.out.printf("Subtracting ints: %d - %d = %d%n", operandOne, operandTwo, difference);
+        System.out.printf("Subtracting floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatDifference);
 
         int product = multiply(operandOne, operandTwo);
 
