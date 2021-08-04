@@ -76,6 +76,16 @@ public class MethodsExercises {
         return userInt;
     }
 
+    public static long factorial(long integer) {
+        long product = 1;
+
+        for (long i = integer; i > 1; i--) {
+            product *= i;
+        }
+
+        return product;
+    }
+
     public static void main(String[] args) {
         int operandOne = 13;
         int operandTwo = 7;
@@ -113,5 +123,18 @@ public class MethodsExercises {
         System.out.printf("Modulus: %d %% %d = %d%n", operandOne, operandTwo, remainder);
 
         System.out.printf("You entered: %d%n", getInteger(0, 99));
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Fun with factorial: ");
+        boolean userWantsToContinue = true;
+
+        do {
+            long userInt = getInteger(1, 10);
+            System.out.printf("%d! = %d%n", userInt, factorial(userInt));
+
+            System.out.print("Continue? [y/n] ");
+            String userResponse = input.next();
+            userWantsToContinue = userResponse.contains("y");
+        } while (userWantsToContinue);
     }
 }
