@@ -15,7 +15,7 @@ public class MethodsExercises {
         return addendLeft + addendRight;
     }
 
-    public static float add(float addendLeft, float addendRight) {
+    public static double add(double addendLeft, double addendRight) {
         return addendLeft + addendRight;
     }
 
@@ -23,15 +23,15 @@ public class MethodsExercises {
         return operandLeft - operandRight;
     }
 
-    public static float subtract(float operandLeft, float operandRight) {
+    public static double subtract(double operandLeft, double operandRight) {
         return operandLeft - operandRight;
     }
 
-//    public static int multiply(int factor, int multiplier) {
-//        return factor * multiplier;
-//    }
+    public static int multiply(int factor, int multiplier) {
+        return factor * multiplier;
+    }
 
-    public static float multiply(float factor, float multiplier) {
+    public static double multiply(double factor, double multiplier) {
         return factor * multiplier;
     }
 
@@ -47,13 +47,13 @@ public class MethodsExercises {
 //    }
 
     // Bonus: recursive multiply
-    public static int multiply(int factor, int multiplier) {
-        if (multiplier == 1) return factor;
+//    public static int multiply(int factor, int multiplier) {
+//        if (multiplier == 1) return factor;
+//
+//        return factor + multiply(factor, multiplier - 1);
+//    }
 
-        return factor + multiply(factor, multiplier - 1);
-    }
-
-    public static float divide(float dividend, float divisor) {
+    public static double divide(double dividend, double divisor) {
         return dividend / divisor;
     }
 
@@ -65,33 +65,33 @@ public class MethodsExercises {
         int operandOne = 13;
         int operandTwo = 7;
 
-        float operandLeft = 4.25f;
-        float operandRight = 2.97f;
+        double operandLeft = 4.25;
+        double operandRight = 2.97;
 
         int sum = add(operandOne, operandTwo);
-        float floatSum = add(operandLeft, operandRight);
+        double doubleSum = add(operandLeft, operandRight);
 
         System.out.printf("Add ints: %d + %d = %d%n", operandOne, operandTwo, sum);
-        System.out.printf("Add floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatSum);
+        System.out.printf("Add doubles: %.2f + %.2f = %.2f%n", operandLeft, operandRight, doubleSum);
 
         int difference = subtract(operandOne, operandTwo);
-        float floatDifference = subtract(operandLeft, operandRight);
+        double doubleDifference = subtract(operandLeft, operandRight);
 
         System.out.printf("Subtract ints: %d - %d = %d%n", operandOne, operandTwo, difference);
-        System.out.printf("Subtract floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatDifference);
+        System.out.printf("Subtract doubles: %.2f + %.2f = %.2f%n", operandLeft, operandRight, doubleDifference);
 
         int product = multiply(operandOne, operandTwo);
-        float floatProduct = multiply(operandLeft, operandRight);
+        double doubleProduct = multiply(operandLeft, operandRight);
 
         System.out.printf("Multiply ints: %d * %d = %d%n", operandOne, operandTwo, product);
-        System.out.printf("Multiply floats: %.2f + %.2f = %.2f%n", operandLeft, operandRight, floatProduct);
+        System.out.printf("Multiply doubles: %.2f + %.2f = %.4f%n", operandLeft, operandRight, doubleProduct);
 
-        float dividend = 42f;
-        float divisor = 17f;
+        double dividend = 42;
+        double divisor = 17;
 
-        float quotient = divide(dividend, divisor);
+        double quotient = divide(dividend, divisor);
 
-        System.out.printf("Divide: %.3f / %.3f = %.3f%n", dividend, divisor, quotient);
+        System.out.printf("Divide: %.0f / %.0f = %.5f%n", dividend, divisor, quotient);
 
         int remainder = modulus(operandOne, operandTwo);
 
