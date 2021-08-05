@@ -21,7 +21,7 @@ public class Input {
         int userInt = this.getInt();
 
         if (userInt < min || userInt > max) {
-            System.out.println("That's not within the range.");
+            System.out.println("Sorry, that's not within the range.");
             return getInt(min, max);
         } else {
             return userInt;
@@ -36,6 +36,7 @@ public class Input {
         double userDouble = this.getDouble();
 
         if (userDouble < min || userDouble > max) {
+            System.out.println("Sorry, that's not within the range.");
             return getDouble(min, max);
         } else {
             return userDouble;
