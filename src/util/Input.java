@@ -21,6 +21,7 @@ public class Input {
         int userInt = this.getInt();
 
         if (userInt < min || userInt > max) {
+            System.out.println("That's not within the range.");
             return getInt(min, max);
         } else {
             return userInt;
