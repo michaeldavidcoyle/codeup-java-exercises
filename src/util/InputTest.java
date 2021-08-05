@@ -13,6 +13,10 @@ public class InputTest {
 
         if (userWantChat) {
             System.out.println("Great. Let's talk!");
+
+            System.out.printf("%s, what it your favorite integer? ", userName);
+            int userFavoriteInteger = input.getInt();
+            System.out.printf("Hmm, %d is a good one.", userFavoriteInteger);
         } else {
             System.out.println("No problem, maybe some other time.");
         }
