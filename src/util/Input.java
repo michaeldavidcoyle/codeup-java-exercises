@@ -12,4 +12,8 @@ public class Input {
     public String getString() {
         return this.scanner.nextLine();
     }
+
+    public boolean yesNo() {
+        return getString().toLowerCase().contains("y");
+    }
 }
