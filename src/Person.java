@@ -15,13 +15,13 @@ public class Person {
          this.name = name;
     }
 
-//    public void sayHello(){
-//        // TODO: print a message to the console using the person's name
-//    }
+    public void sayHello(){
+        // TODO: print a message to the console using the person's name
+        System.out.printf("Hello, my name is %s.", this.getName());
+    }
 
     public static void main(String[] args) {
         Person mdc = new Person("Michael");
-        mdc.setName("David");
-        System.out.printf("Hello, my name is %s.", mdc.getName());
+        mdc.sayHello();
     }
 }
