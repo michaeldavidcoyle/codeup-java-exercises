@@ -9,17 +9,19 @@ public class Person {
         // TODO: return the person's name
         return this.name;
     }
-//
-//    public void setName(String name){
-//        // TODO: change the name property to the passed value
-//    }
-//
+
+    public void setName(String name){
+        // TODO: change the name property to the passed value
+         this.name = name;
+    }
+
 //    public void sayHello(){
 //        // TODO: print a message to the console using the person's name
 //    }
 
     public static void main(String[] args) {
         Person mdc = new Person("Michael");
+        mdc.setName("David");
         System.out.printf("Hello, my name is %s.", mdc.getName());
     }
 }
