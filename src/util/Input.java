@@ -27,7 +27,7 @@ public class Input {
         }
     }
 
-    public double getInt() {
+    public int getInt() {
         return this.scanner.nextInt();
     }
 
