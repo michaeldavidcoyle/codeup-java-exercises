@@ -6,7 +6,15 @@ public class InputTest {
 
         System.out.print("Hello, what is your name? ");
         String userName = input.getString();
-
         System.out.printf("Pleasure to meet you, %s.%n", userName);
+
+        System.out.printf("%s, would you like to chat? ", userName);
+        boolean userWantChat = input.yesNo();
+
+        if (userWantChat) {
+            System.out.println("Great. Let's talk!");
+        } else {
+            System.out.println("No problem, maybe some other time.");
+        }
     }
 }
