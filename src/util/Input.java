@@ -27,9 +27,21 @@ public class Input {
         }
     }
 
-    public int getInt() {
+    public double getInt() {
         return this.scanner.nextInt();
     }
 
+    public double getDouble(double min, double max) {
+        double userDouble = this.getDouble();
 
+        if (userDouble < min || userDouble > max) {
+            return getDouble(min, max);
+        } else {
+            return userDouble;
+        }
+    }
+
+    public double getDouble() {
+        return this.scanner.nextDouble();
+    }
 }
