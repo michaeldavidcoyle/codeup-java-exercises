@@ -16,4 +16,20 @@ public class Input {
     public boolean yesNo() {
         return getString().toLowerCase().contains("y");
     }
+
+    public int getInt(int min, int max) {
+        int userInt = this.getInt();
+
+        if (userInt < min || userInt > max) {
+            return getInt(min, max);
+        } else {
+            return userInt;
+        }
+    }
+
+    public int getInt() {
+        return this.scanner.nextInt();
+    }
+
+
 }
