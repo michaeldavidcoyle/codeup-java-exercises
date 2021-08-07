@@ -98,6 +98,13 @@ public class MethodsExercises {
         return (int) (Math.random() * (max - min + 1) + min);
     }
 
+    public static void rollDice() {
+        System.out.println("Choose the number of side for your dice.");
+        int sides = getInteger(2, 20);
+
+        System.out.printf("You chose %d-sided dice.", sides);
+    }
+
     public static void main(String[] args) {
         int operandOne = 13;
         int operandTwo = 7;
@@ -150,16 +157,18 @@ public class MethodsExercises {
 //        } while (userWantsToContinue);
 
         // test of randomInteger method
-        int minRandInt = 10;
-        int maxRandInt = 0;
-        int testRand;
+//        int minRandInt = 10;
+//        int maxRandInt = 0;
+//        int testRand;
+//
+//        for (int i = 0; i < 1000; i++) {
+//            testRand = randomInteger(0, 9);
+//            if (testRand > maxRandInt) maxRandInt = testRand;
+//            if (testRand < minRandInt) minRandInt = testRand;
+//        }
+//        System.out.printf("min: %d%n", minRandInt);
+//        System.out.printf("max: %d%n", maxRandInt);
 
-        for (int i = 0; i < 1000; i++) {
-            testRand = randomInteger(0, 9);
-            if (testRand > maxRandInt) maxRandInt = testRand;
-            if (testRand < minRandInt) minRandInt = testRand;
-        }
-        System.out.printf("min: %d%n", minRandInt);
-        System.out.printf("max: %d%n", maxRandInt);
+        rollDice();
     }
 }
