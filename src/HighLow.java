@@ -1,6 +1,14 @@
 import java.lang.reflect.Method;
 
 public class HighLow {
+    public static void giveHint(int guess, int actual) {
+        if (guess < actual) {
+            System.out.println("Higher");
+        } else if (guess > actual) {
+            System.out.println("Lower");
+        }
+    }
+
     public static void main(String[] args) {
         int myNumber = MethodsExercises.randomInteger(1, 100);
         int guessCount = 0;
@@ -15,11 +23,10 @@ public class HighLow {
             if (guessCount == maxGuessCount && guess != myNumber) {
                 gameIsLost = true;
                 break;
-            } else if (guess < myNumber) {
-                System.out.println("Higher");
-            } else if (guess > myNumber) {
-                System.out.println("Lower");
             }
+
+            giveHint(guess, myNumber);
+
         } while (guess != myNumber);
 
         if (gameIsLost) {
