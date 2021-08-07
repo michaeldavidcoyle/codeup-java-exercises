@@ -122,15 +122,15 @@ public class MethodsExercises {
 
         System.out.printf("Modulus: %d %% %d = %d%n", operandOne, operandTwo, remainder);
 
-        System.out.printf("You entered: %d%n", getInteger(0, 99));
+//        System.out.printf("You entered: %d%n", getInteger(0, 99));
 
         Scanner input = new Scanner(System.in);
         System.out.println("Fun with factorial: ");
         boolean userWantsToContinue = true;
 
         do {
-            long userInt = getInteger(1, 10);
-            System.out.printf("%d! = %d%n", userInt, factorial(userInt));
+            long userInt = getInteger(1, 39);
+            System.out.printf("%d! = %,d%n", userInt, factorial(userInt));
 
             System.out.print("Continue? [y/n] ");
             String userResponse = input.next();
