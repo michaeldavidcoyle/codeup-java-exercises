@@ -76,6 +76,7 @@ public class MethodsExercises {
         return userInt;
     }
 
+    /*// looped version
     public static long factorial(long integer) {
         long product = 1;
 
@@ -84,6 +85,13 @@ public class MethodsExercises {
         }
 
         return product;
+    }*/
+
+    // recursive version
+    public static long factorial(long integer) {
+        if (integer == 1) return 1;
+
+        return integer * factorial(integer - 1);
     }
 
     public static void main(String[] args) {
