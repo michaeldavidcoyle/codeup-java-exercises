@@ -99,10 +99,25 @@ public class MethodsExercises {
     }
 
     public static void rollDice() {
-        System.out.println("Choose the number of side for your dice.");
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Choose the number of sides for your dice.");
         int sides = getInteger(2, 20);
 
-        System.out.printf("You chose %d-sided dice.", sides);
+        int firstDie = randomInteger(1, sides);
+        int secondDie = randomInteger(1, sides);
+
+        System.out.printf("You rolled: %d, %d%n", firstDie, secondDie);
+
+        System.out.print("Roll again? [y/n] ");
+        String rollResponse = input.next();
+        boolean wantsToRoll = rollResponse.toLowerCase().contains("y");
+
+        if (wantsToRoll) {
+            rollDice();
+        } else {
+            System.out.println("Thanks for playing, bye!");
+        }
     }
 
     public static void main(String[] args) {
