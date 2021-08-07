@@ -94,6 +94,10 @@ public class MethodsExercises {
         return integer * factorial(integer - 1);
     }
 
+    public static int randomInteger(int min, int max) {
+        return (int) (Math.random() * (max - min + 1) + min);
+    }
+
     public static void main(String[] args) {
         int operandOne = 13;
         int operandTwo = 7;
@@ -132,17 +136,30 @@ public class MethodsExercises {
 
 //        System.out.printf("You entered: %d%n", getInteger(0, 99));
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("Fun with factorial: ");
-        boolean userWantsToContinue = true;
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Fun with factorial: ");
+//        boolean userWantsToContinue = true;
+//
+//        do {
+//            long userInt = getInteger(1, 39);
+//            System.out.printf("%d! = %,d%n", userInt, factorial(userInt));
+//
+//            System.out.print("Continue? [y/n] ");
+//            String userResponse = input.next();
+//            userWantsToContinue = userResponse.contains("y");
+//        } while (userWantsToContinue);
 
-        do {
-            long userInt = getInteger(1, 39);
-            System.out.printf("%d! = %,d%n", userInt, factorial(userInt));
+        // test of randomInteger method
+        int minRandInt = 10;
+        int maxRandInt = 0;
+        int testRand;
 
-            System.out.print("Continue? [y/n] ");
-            String userResponse = input.next();
-            userWantsToContinue = userResponse.contains("y");
-        } while (userWantsToContinue);
+        for (int i = 0; i < 1000; i++) {
+            testRand = randomInteger(0, 9);
+            if (testRand > maxRandInt) maxRandInt = testRand;
+            if (testRand < minRandInt) minRandInt = testRand;
+        }
+        System.out.printf("min: %d%n", minRandInt);
+        System.out.printf("max: %d%n", maxRandInt);
     }
 }
