@@ -8,8 +8,16 @@ public class ShapesTest {
         System.out.printf("box1 area: %f%n", box1.getArea());
         System.out.printf("box1 perimeter: %f%n", box1.getPerimeter());
 
-        Rectangle box2 = new Square(5);
+        Quadrilateral box2 = new Square(5);
         System.out.printf("box2 area: %f%n", box2.getArea());
         System.out.printf("box2 perimeter: %f%n", box2.getPerimeter());
+
+//        Measurable myShape = new Rectangle(Math.PI, 1);
+//        System.out.printf("myShape area: %f%n", myShape.getArea());
+//        System
+
+        Measurable myShape = new Square(Math.PI);
+        System.out.printf("myShape area: %f%n", myShape.getArea());
+        System.out.printf("myShape perimeter: %f%n", myShape.getPerimeter());
     }
 }
