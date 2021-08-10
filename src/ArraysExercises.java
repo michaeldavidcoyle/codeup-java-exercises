@@ -2,6 +2,12 @@ import java.util.Arrays;
 
 public class ArraysExercises {
 
+    public static Person[] addPerson(Person[] people, Person person) {
+        Person[] peopleCopy = Arrays.copyOf(people, people.length + 1);
+        peopleCopy[people.length] = person;
+        return peopleCopy;
+    }
+
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(numbers); // prints object reference
@@ -16,6 +22,13 @@ public class ArraysExercises {
 
         for (Person person : people) {
             System.out.println(person.getName());
+        }
+
+        // test for addPerson method
+        Person[] peoplePlus = addPerson(people, new Person("Shemp"));
+
+        for (Person person : peoplePlus) {
+            System.out.printf("%s, ", person.getName());
         }
     }
 }
