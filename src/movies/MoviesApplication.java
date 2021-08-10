@@ -47,5 +47,29 @@ public class MoviesApplication {
 
         System.out.print("Enter your choice: ");
         int userOption = input.getInt(0, 6);
+
+        switch (userOption) {
+            case 0:
+                System.out.println("Goodbye!");
+                break;
+            case 1:
+                displayMovies();
+                break;
+            case 2:
+                displayMovies("animated");
+                break;
+            case 3:
+                displayMovies("drama");
+                break;
+            case 4:
+                displayMovies("horror");
+                break;
+            case 5:
+                displayMovies("musical");
+                break;
+            case 6:
+                displayMovies("scifi");
+                break;
+        }
     }
 }
