@@ -24,7 +24,7 @@ public class MoviesApplication {
         Movie[] movies = MoviesArray.findAll();
 
         for (Movie movie : movies) {
-            System.out.printf("%s -- %s", movie.getName(), movie.getCategory());
+            System.out.printf("%s -- %s%n", movie.getName(), movie.getCategory());
         }
     }
 
@@ -33,7 +33,7 @@ public class MoviesApplication {
 
         for (Movie movie : movies) {
             if (movie.getCategory().equals(category)) {
-                System.out.printf("%s -- %s", movie.getName(), movie.getCategory());
+                System.out.printf("%s -- %s%n", movie.getName(), movie.getCategory());
             }
         }
     }
