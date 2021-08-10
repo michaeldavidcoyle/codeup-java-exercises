@@ -20,6 +20,24 @@ public class MoviesApplication {
         }
     }
 
+    public static void displayMovies() {
+        Movie[] movies = MoviesArray.findAll();
+
+        for (Movie movie : movies) {
+            System.out.printf("%s -- %s", movie.getName(), movie.getCategory());
+        }
+    }
+
+    public static void displayMovies(String category) {
+        Movie[] movies = MoviesArray.findAll();
+
+        for (Movie movie : movies) {
+            if (movie.getCategory().equals(category)) {
+                System.out.printf("%s -- %s", movie.getName(), movie.getCategory());
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Input input = new Input();
 
@@ -29,7 +47,5 @@ public class MoviesApplication {
 
         System.out.print("Enter your choice: ");
         int userOption = input.getInt(0, 6);
-
-        System.out.printf("You chose %d%n", userOption);
     }
 }
