@@ -1,8 +1,9 @@
 package movies;
 
+import java.util.Arrays;
+
 public class MoviesArray {
-    public static Movie[] findAll() {
-        return new Movie[]{
+    private static Movie[] movies = {
             new Movie("Citizen Kane", "drama"),
             new Movie("Casablanca", "drama"),
             new Movie("The Godfather", "drama"),
@@ -103,6 +104,14 @@ public class MoviesArray {
             new Movie("Unforgiven", "drama"),
             new Movie("Guess Who's Coming To Dinner", "drama"),
             new Movie("Yankee Doodle Dandy", "musical")
-        };
+    };
+
+    public static Movie[] findAll() {
+        return movies;
+    }
+
+    public static void addMovie(Movie movie) {
+        movies = Arrays.copyOf(movies, movies.length + 1);
+        movies[movies.length - 1] = movie;
     }
 }

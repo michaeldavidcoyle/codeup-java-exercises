@@ -13,6 +13,10 @@ public class Input {
         return this.scanner.next();
     }
 
+    public String getSentence() {
+        return this.scanner.nextLine();
+    }
+
     public boolean yesNo() {
         return getString().toLowerCase().contains("y");
     }

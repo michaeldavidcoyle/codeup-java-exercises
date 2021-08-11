@@ -11,7 +11,8 @@ public class MoviesApplication {
             "view movies in the drama category",
             "view movies in the horror category",
             "view movies in the musical category",
-            "view movies in the scifi category"
+            "view movies in the scifi category",
+            "add movie"
     };
 
     public static void displayMenu() {
@@ -42,6 +43,18 @@ public class MoviesApplication {
         }
     }
 
+    public static void addUserMovie() {
+        Input input = new Input();
+
+        System.out.print("Enter title: ");
+        String userTitle = input.getSentence();
+
+        System.out.print("Enter category: ");
+        String userCategory = input.getString();
+
+        MoviesArray.addMovie(new Movie(userTitle, userCategory));
+    }
+
     public static void main(String[] args) {
         Input input = new Input();
 
@@ -53,7 +66,7 @@ public class MoviesApplication {
             displayMenu();
 
             System.out.print("Enter your choice: ");
-            int userOption = input.getInt(0, 6);
+            int userOption = input.getInt(0, menu.length - 1);
 
             switch (userOption) {
                 case 0:
@@ -77,6 +90,9 @@ public class MoviesApplication {
                     break;
                 case 6:
                     displayMovies("scifi");
+                    break;
+                case 7:
+                    addUserMovie();
                     break;
             }
         } while (userWantsToContinue);
