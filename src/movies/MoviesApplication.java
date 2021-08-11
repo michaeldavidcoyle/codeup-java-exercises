@@ -20,11 +20,15 @@ public class MoviesApplication {
         }
     }
 
+    public static String formatMovie(Movie movie) {
+        return String.format("%s -- %s", movie.getName(), movie.getCategory());
+    }
+
     public static void displayMovies() {
         Movie[] movies = MoviesArray.findAll();
 
         for (Movie movie : movies) {
-            System.out.printf("%s -- %s%n", movie.getName(), movie.getCategory());
+            System.out.println(formatMovie(movie));
         }
     }
 
@@ -33,7 +37,7 @@ public class MoviesApplication {
 
         for (Movie movie : movies) {
             if (movie.getCategory().equals(category)) {
-                System.out.printf("%s -- %s%n", movie.getName(), movie.getCategory());
+                System.out.println(formatMovie(movie));
             }
         }
     }
@@ -41,35 +45,40 @@ public class MoviesApplication {
     public static void main(String[] args) {
         Input input = new Input();
 
-        System.out.println("What would you like to do?");
+        boolean userWantsToContinue = true;
 
-        displayMenu();
+        do {
+            System.out.println("What would you like to do?");
 
-        System.out.print("Enter your choice: ");
-        int userOption = input.getInt(0, 6);
+            displayMenu();
 
-        switch (userOption) {
-            case 0:
-                System.out.println("Goodbye!");
-                break;
-            case 1:
-                displayMovies();
-                break;
-            case 2:
-                displayMovies("animated");
-                break;
-            case 3:
-                displayMovies("drama");
-                break;
-            case 4:
-                displayMovies("horror");
-                break;
-            case 5:
-                displayMovies("musical");
-                break;
-            case 6:
-                displayMovies("scifi");
-                break;
-        }
+            System.out.print("Enter your choice: ");
+            int userOption = input.getInt(0, 6);
+
+            switch (userOption) {
+                case 0:
+                    System.out.println("Goodbye!");
+                    userWantsToContinue = false;
+                    break;
+                case 1:
+                    displayMovies();
+                    break;
+                case 2:
+                    displayMovies("animated");
+                    break;
+                case 3:
+                    displayMovies("drama");
+                    break;
+                case 4:
+                    displayMovies("horror");
+                    break;
+                case 5:
+                    displayMovies("musical");
+                    break;
+                case 6:
+                    displayMovies("scifi");
+                    break;
+            }
+        } while (userWantsToContinue);
     }
 }
