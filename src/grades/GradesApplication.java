@@ -26,5 +26,38 @@ public class GradesApplication {
         students.put("martinmoreno", student2);
         students.put("cousinreno", student3);
         students.put("lilfrankie", student4);
+
+        System.out.println("Welcome!");
+        System.out.println("Here are the GitHub usernames of our students: ");
+
+        for (String key : students.keySet()) {
+            System.out.printf("|%s| ", key);
+        }
+       /*
+
+
+                What student would you like to see more information on?
+
+> pizza
+
+        Sorry, no student found with the GitHub username of "pizza".
+
+                Would you like to see another student?
+
+> y
+
+        What student would you like to see more information on?
+
+> zgulde
+
+        Name: Zach - GitHub Username: zgulde
+        Current Average: 87.4
+
+        Would you like to see another student?
+
+> no
+
+        Goodbye, and have a wonderful day!
+        */
     }
 }
