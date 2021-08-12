@@ -33,6 +33,12 @@ public class Student {
         return sum / grades.size();
     }
 
+    public void displayStudentInfo(String username) {
+        System.out.printf("Name: %s - GitHub Username: %s%n", this.getName(), username);
+        System.out.printf("Grades: %s", this.getGrades());
+        System.out.printf("%nCurrent Average: %.1f%n", this.getGradeAverage());
+    }
+
     public static void main(String[] args) {
         Student studentOne = new Student("Bart");
 

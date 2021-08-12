@@ -9,15 +9,6 @@ public class GradesApplication {
         return (int) (Math.random() * (max - min + 1) + min);
     }
 
-    private static void displayStudentInfo(HashMap<String, Student> students, String username) {
-        Student student = students.get(username);
-        ArrayList<Integer> grades = student.getGrades();
-
-        System.out.printf("Name: %s - GitHub Username: %s%n", student.getName(), username);
-        System.out.printf("Grades: %s", grades);
-        System.out.printf("%nCurrent Average: %.1f%n", student.getGradeAverage());
-    }
-
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
 
@@ -57,12 +48,12 @@ public class GradesApplication {
 
             if (userChoice.equals("all")) {
                 for (String key : students.keySet()) {
-                    displayStudentInfo(students, key);
+                    students.get(key).displayStudentInfo(key);
                     System.out.println();
                 }
             } else if (students.containsKey(userChoice)) {
                 System.out.println();
-                displayStudentInfo(students, userChoice);
+                students.get(userChoice).displayStudentInfo(userChoice);
             } else {
                 System.out.printf("Sorry, no student found with the GitHub username of \"%s\".%n", userChoice);
             }
