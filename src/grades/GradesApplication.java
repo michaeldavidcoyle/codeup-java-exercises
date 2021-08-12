@@ -37,44 +37,31 @@ public class GradesApplication {
 
         Scanner input = new Scanner(System.in);
 
+        boolean userWantsToContinue;
+
         System.out.println("Welcome!");
-        System.out.println("Here are the GitHub usernames of our students: ");
 
-        for (String key : students.keySet()) {
-            System.out.printf("|%s| ", key);
-        }
+        do {
+            System.out.println("Here are the GitHub usernames of our students: ");
 
-        System.out.print("\nWhat student would you like to see more information on? ");
-        String userChoice = input.next();
+            for (String key : students.keySet()) {
+                System.out.printf("|%s| ", key);
+            }
 
-        if (students.containsKey(userChoice)) {
-            displayStudentInfo(students, userChoice);
-        } else {
-            System.out.printf("Sorry, no student found with the GitHub username of \"%s\".", userChoice);
-        }
-       /*
+            System.out.print("\nWhat student would you like to see more information on? ");
+            String userChoice = input.next();
 
+            if (students.containsKey(userChoice)) {
+                displayStudentInfo(students, userChoice);
+            } else {
+                System.out.printf("Sorry, no student found with the GitHub username of \"%s\".%n", userChoice);
+            }
 
+            System.out.print("Would you like to see another student? [y/n] ");
+            String userResponse = input.next();
+            userWantsToContinue = userResponse.toLowerCase().contains("y");
+        } while (userWantsToContinue);
 
-> pizza
-
-
-                Would you like to see another student?
-
-> y
-
-        What student would you like to see more information on?
-
-> zgulde
-
-        Name: Zach - GitHub Username: zgulde
-        Current Average: 87.4
-
-        Would you like to see another student?
-
-> no
-
-        Goodbye, and have a wonderful day!
-        */
+        System.out.println("Goodbye, and have a wonderful day!");
     }
 }
