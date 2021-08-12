@@ -1,5 +1,6 @@
 package grades;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -10,9 +11,16 @@ public class GradesApplication {
 
     private static void displayStudentInfo(HashMap<String, Student> students, String username) {
         Student student = students.get(username);
+        ArrayList<Integer> grades = student.getGrades();
 
         System.out.printf("Name: %s - GitHub Username: %s%n", student.getName(), username);
-        System.out.printf("Current Average: %.1f%n", student.getGradeAverage());
+        System.out.print("Grades: ");
+
+        for (int grade : grades) {
+            System.out.printf("%d, ", grade);
+        }
+
+        System.out.printf("%nCurrent Average: %.1f%n", student.getGradeAverage());
     }
 
     public static void main(String[] args) {
