@@ -50,16 +50,23 @@ public class GradesApplication {
         System.out.println("Welcome!");
 
         do {
-            System.out.println("Here are the GitHub usernames of our students: ");
+            System.out.println("\nHere are the GitHub usernames of our students:\n");
 
             for (String key : students.keySet()) {
                 System.out.printf("|%s| ", key);
             }
 
-            System.out.print("\nWhat student would you like to see more information on? ");
+            System.out.println("\n\nWhat student would you like to see more information on? ");
+            System.out.print("(Type \"all\" to see a list of all students) ");
             String userChoice = input.next();
 
-            if (students.containsKey(userChoice)) {
+            if (userChoice.equals("all")) {
+                for (String key : students.keySet()) {
+                    displayStudentInfo(students, key);
+                    System.out.println();
+                }
+            } else if (students.containsKey(userChoice)) {
+                System.out.println();
                 displayStudentInfo(students, userChoice);
             } else {
                 System.out.printf("Sorry, no student found with the GitHub username of \"%s\".%n", userChoice);
