@@ -1,10 +1,18 @@
 package grades;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class GradesApplication {
     public static int randomInteger(int min, int max) {
         return (int) (Math.random() * (max - min + 1) + min);
+    }
+
+    private static void displayStudentInfo(HashMap<String, Student> students, String username) {
+        Student student = students.get(username);
+
+        System.out.printf("Name: %s - GitHub Username: %s%n", student.getName(), username);
+        System.out.printf("Current Average: %.1f%n", student.getGradeAverage());
     }
 
     public static void main(String[] args) {
@@ -27,20 +35,29 @@ public class GradesApplication {
         students.put("cousinreno", student3);
         students.put("lilfrankie", student4);
 
+        Scanner input = new Scanner(System.in);
+
         System.out.println("Welcome!");
         System.out.println("Here are the GitHub usernames of our students: ");
 
         for (String key : students.keySet()) {
             System.out.printf("|%s| ", key);
         }
+
+        System.out.print("\nWhat student would you like to see more information on? ");
+        String userChoice = input.next();
+
+        if (students.containsKey(userChoice)) {
+            displayStudentInfo(students, userChoice);
+        } else {
+            System.out.printf("Sorry, no student found with the GitHub username of \"%s\".", userChoice);
+        }
        /*
 
 
-                What student would you like to see more information on?
 
 > pizza
 
-        Sorry, no student found with the GitHub username of "pizza".
 
                 Would you like to see another student?
 
