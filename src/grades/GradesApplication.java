@@ -14,12 +14,7 @@ public class GradesApplication {
         ArrayList<Integer> grades = student.getGrades();
 
         System.out.printf("Name: %s - GitHub Username: %s%n", student.getName(), username);
-        System.out.print("Grades: ");
-
-        for (int grade : grades) {
-            System.out.printf("%d, ", grade);
-        }
-
+        System.out.printf("Grades: %s", grades);
         System.out.printf("%nCurrent Average: %.1f%n", student.getGradeAverage());
     }
 
@@ -57,7 +52,7 @@ public class GradesApplication {
             }
 
             System.out.println("\n\nWhat student would you like to see more information on? ");
-            System.out.print("(Type \"all\" to see a list of all students) ");
+            System.out.print("(Type \"all\" to see a list of all students): ");
             String userChoice = input.next();
 
             if (userChoice.equals("all")) {
