@@ -33,7 +33,16 @@ public class Input {
     }
 
     public int getInt() {
-        return this.scanner.nextInt();
+        String userInput = this.getString();
+        int userInt = 0;
+
+        try {
+            userInt = Integer.valueOf(userInput); // IntelliJ suggests using parseInt
+        } catch (NumberFormatException e) {
+            System.out.printf("\"%s\" is not an integer.%n", userInput);
+        }
+
+        return userInt;
     }
 
     public double getDouble(double min, double max) {
