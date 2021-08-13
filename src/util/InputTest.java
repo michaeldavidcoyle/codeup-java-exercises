@@ -38,8 +38,12 @@ public class InputTest {
 //            System.out.println("No problem, maybe some other time.");
 //        }
 
-        System.out.print("What it your favorite integer? ");
-        int userFavoriteInteger = input.getInt();
-        System.out.printf("Yes, %d is a good one.%n", userFavoriteInteger);
+//        System.out.print("What it your favorite integer? ");
+//        int userFavoriteInteger = input.getInt();
+//        System.out.printf("Yes, %d is a good one.%n", userFavoriteInteger);
+
+        System.out.print("Pick a whole number from 1 to 10: ");
+        int userInteger = input.getInt(1, 10);
+        System.out.printf("Thank you, %d is between 1 and 10.%n", userInteger);
     }
 }
