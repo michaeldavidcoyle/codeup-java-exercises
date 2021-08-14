@@ -50,8 +50,8 @@ public class InputTest {
 //        double userDouble = input.getDouble();
 //        System.out.printf("You chose %f. Thank you.%n", userDouble);
 
-//        double minDouble = 0.000001;
-//        double maxDouble = (minDouble + 7) * Math.PI;
+        double minDouble = 0.000001;
+        double maxDouble = (minDouble + 7) * Math.PI;
 //
 //        System.out.printf("Please enter a decimal number from %f to %f: ", minDouble, maxDouble);
 //        double userDouble = input.getDouble(minDouble, maxDouble);
@@ -73,9 +73,15 @@ public class InputTest {
 //        int userFavoriteWholeNumber = input.getInt("What it your favorite whole number? ");
 //        System.out.printf("You chose the number %d. Thank you.%n", userFavoriteWholeNumber);
 
-        int min = 10;
-        int max = 99;
-        int userIntInRange = input.getInt("What's a good two digit number? ", min, max);
-        System.out.printf("%d, thanks. I'll remember that.", userIntInRange);
+//        int min = 10;
+//        int max = 99;
+//        int userIntInRange = input.getInt("What's a good two digit number? ", min, max);
+//        System.out.printf("%d, thanks. I'll remember that.", userIntInRange);
+
+//        double userRealNumber = input.getDouble("What is your favorite real number? ");
+//        System.out.printf("%f, that's interesting.", userRealNumber);
+
+        double userDoubleInRange = input.getDouble(String.format("Choose a real number from %f to %f: ", minDouble, maxDouble), minDouble, maxDouble);
+        System.out.printf("%f is in range. Thank you.%n", userDoubleInRange);
     }
 }

@@ -99,4 +99,9 @@ public class Input {
             return userDouble;
         }
     }
+
+    public double getDouble(String prompt, double min, double max) {
+        System.out.print(prompt);
+        return this.getDouble(min, max);
+    }
 }
