@@ -60,7 +60,14 @@ public class InputTest {
 //        String userName = input.getString("What is your name? ");
 //        System.out.printf("Hello, %s, nice to meet you.", userName);
 
-        String userSentence = input.getSentence("Please enter a sentence: ");
-        System.out.printf("\"%s,\" eh? Interesting.", userSentence);
+//        String userSentence = input.getSentence("Please enter a sentence: ");
+//        System.out.printf("\"%s,\" eh? Interesting.", userSentence);
+
+        boolean userLovesMovies = input.yesNo("Do you love movies? [y/n] ");
+        if (userLovesMovies) {
+            System.out.println("Me too! Let's see what's on Netflix.");
+        } else {
+            System.out.println("Oh, that's too bad. We might have been friends.");
+        }
     }
 }

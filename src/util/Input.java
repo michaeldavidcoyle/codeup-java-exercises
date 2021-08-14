@@ -31,6 +31,10 @@ public class Input {
         return getString().toLowerCase().contains("y");
     }
 
+    public boolean yesNo(String prompt) {
+        return getString(prompt).toLowerCase().contains("y");
+    }
+
     public int getInt() {
         String userInput = this.getString();
         int userInt;
