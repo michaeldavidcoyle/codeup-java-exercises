@@ -41,12 +41,13 @@ public class Input {
 
     public int getInt() {
         String userInput = this.getString();
-        int userInt = 0;
+        int userInt;
 
         try {
             userInt = Integer.valueOf(userInput); // IntelliJ suggests using parseInt
         } catch (NumberFormatException e) {
-            System.out.printf("\"%s\" is not an integer.%n", userInput);
+            System.out.printf("\"%s\" is not a valid integer. Please enter an integer: ", userInput);
+            return getInt();
         }
 
         return userInt;
