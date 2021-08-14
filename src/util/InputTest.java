@@ -42,8 +42,12 @@ public class InputTest {
 //        int userFavoriteInteger = input.getInt();
 //        System.out.printf("You chose the number %d. Thank you.%n", userFavoriteInteger);
 
-        System.out.print("Please select a whole number from 1 to 10: ");
-        int userInteger = input.getInt(1, 10);
-        System.out.printf("Thank you, %d is between 1 and 10.%n", userInteger);
+//        System.out.print("Please select a whole number from 1 to 10: ");
+//        int userInteger = input.getInt(1, 10);
+//        System.out.printf("Thank you, %d is between 1 and 10.%n", userInteger);
+
+        System.out.print("Please enter a decimal number: ");
+        double userDouble = input.getDouble();
+        System.out.printf("You chose %f. Thank you.%n", userDouble);
     }
 }

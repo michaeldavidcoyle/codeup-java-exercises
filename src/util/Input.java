@@ -58,6 +58,16 @@ public class Input {
     }
 
     public double getDouble() {
-        return this.scanner.nextDouble();
+        String userInput = this.getString();
+        Double userDouble;
+
+        try {
+            userDouble = Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.printf("\"%s\" is not valid. Please enter a decimal number: ", userInput);
+            return getDouble();
+        }
+
+        return userDouble;
     }
 }
