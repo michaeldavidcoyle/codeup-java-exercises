@@ -22,17 +22,10 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        String userInput = this.getString();
-        int userInt = 0;
-
-        try {
-            userInt = Integer.parseInt(userInput);
-        } catch (NumberFormatException e) {
-            System.out.printf("\"%s\" is not an integer.%n", userInput);
-        }
+        int userInt = this.getInt();
 
         if (userInt < min || userInt > max) {
-            System.out.println("Sorry, that's not within the range.");
+            System.out.print("Sorry, that's not within the range. Please try again: ");
             return getInt(min, max);
         } else {
             return userInt;
