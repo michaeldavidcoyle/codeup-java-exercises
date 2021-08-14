@@ -50,11 +50,14 @@ public class InputTest {
 //        double userDouble = input.getDouble();
 //        System.out.printf("You chose %f. Thank you.%n", userDouble);
 
-        double minDouble = 0.000001;
-        double maxDouble = (minDouble + 7) * Math.PI;
+//        double minDouble = 0.000001;
+//        double maxDouble = (minDouble + 7) * Math.PI;
+//
+//        System.out.printf("Please enter a decimal number from %f to %f: ", minDouble, maxDouble);
+//        double userDouble = input.getDouble(minDouble, maxDouble);
+//        System.out.printf("You chose %f. Thank you.%n", userDouble);
 
-        System.out.printf("Please enter a decimal number from %f to %f: ", minDouble, maxDouble);
-        double userDouble = input.getDouble(minDouble, maxDouble);
-        System.out.printf("You chose %f. Thank you.%n", userDouble);
+        String userName = input.getString("What is your name? ");
+        System.out.printf("Hello, %s, nice to meet you.", userName);
     }
 }

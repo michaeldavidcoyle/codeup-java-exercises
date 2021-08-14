@@ -13,23 +13,17 @@ public class Input {
         return this.scanner.next();
     }
 
+    public String getString(String prompt) {
+        System.out.print(prompt);
+        return this.scanner.next();
+    }
+
     public String getSentence() {
         return this.scanner.nextLine();
     }
 
     public boolean yesNo() {
         return getString().toLowerCase().contains("y");
-    }
-
-    public int getInt(int min, int max) {
-        int userInt = this.getInt();
-
-        if (userInt < min || userInt > max) {
-            System.out.print("Sorry, that's not within the range. Please try again: ");
-            return getInt(min, max);
-        } else {
-            return userInt;
-        }
     }
 
     public int getInt() {
@@ -46,14 +40,14 @@ public class Input {
         return userInt;
     }
 
-    public double getDouble(double min, double max) {
-        double userDouble = this.getDouble();
+    public int getInt(int min, int max) {
+        int userInt = this.getInt();
 
-        if (userDouble < min || userDouble > max) {
+        if (userInt < min || userInt > max) {
             System.out.print("Sorry, that's not within the range. Please try again: ");
-            return getDouble(min, max);
+            return getInt(min, max);
         } else {
-            return userDouble;
+            return userInt;
         }
     }
 
@@ -69,5 +63,16 @@ public class Input {
         }
 
         return userDouble;
+    }
+
+    public double getDouble(double min, double max) {
+        double userDouble = this.getDouble();
+
+        if (userDouble < min || userDouble > max) {
+            System.out.print("Sorry, that's not within the range. Please try again: ");
+            return getDouble(min, max);
+        } else {
+            return userDouble;
+        }
     }
 }
