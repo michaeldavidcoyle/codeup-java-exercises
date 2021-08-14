@@ -63,11 +63,19 @@ public class InputTest {
 //        String userSentence = input.getSentence("Please enter a sentence: ");
 //        System.out.printf("\"%s,\" eh? Interesting.", userSentence);
 
-        boolean userLovesMovies = input.yesNo("Do you love movies? [y/n] ");
-        if (userLovesMovies) {
-            System.out.println("Me too! Let's see what's on Netflix.");
-        } else {
-            System.out.println("Oh, that's too bad. We might have been friends.");
-        }
+//        boolean userLovesMovies = input.yesNo("Do you love movies? [y/n] ");
+//        if (userLovesMovies) {
+//            System.out.println("Me too! Let's see what's on Netflix.");
+//        } else {
+//            System.out.println("Oh, that's too bad. We might have been friends.");
+//        }
+
+//        int userFavoriteWholeNumber = input.getInt("What it your favorite whole number? ");
+//        System.out.printf("You chose the number %d. Thank you.%n", userFavoriteWholeNumber);
+
+        int min = 10;
+        int max = 99;
+        int userIntInRange = input.getInt("What's a good two digit number? ", min, max);
+        System.out.printf("%d, thanks. I'll remember that.", userIntInRange);
     }
 }

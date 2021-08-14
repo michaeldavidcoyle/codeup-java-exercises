@@ -42,11 +42,16 @@ public class Input {
         try {
             userInt = Integer.valueOf(userInput); // IntelliJ suggests using parseInt
         } catch (NumberFormatException e) {
-            System.out.printf("\"%s\" is not a valid integer. Please enter an integer: ", userInput);
+            System.out.printf("\"%s\" is not a valid number. Please try again: ", userInput);
             return getInt();
         }
 
         return userInt;
+    }
+
+    public int getInt(String prompt) {
+        System.out.print(prompt);
+        return this.getInt();
     }
 
     public int getInt(int min, int max) {
@@ -58,6 +63,11 @@ public class Input {
         } else {
             return userInt;
         }
+    }
+
+    public int getInt(String prompt, int min, int max) {
+        System.out.print(prompt);
+        return getInt(min, max);
     }
 
     public double getDouble() {
