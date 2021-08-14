@@ -28,11 +28,11 @@ public class Input {
     }
 
     public boolean yesNo() {
-        return getString().toLowerCase().contains("y");
+        return this.getString().toLowerCase().contains("y");
     }
 
     public boolean yesNo(String prompt) {
-        return getString(prompt).toLowerCase().contains("y");
+        return this.getString(prompt).toLowerCase().contains("y");
     }
 
     public int getInt() {
@@ -43,7 +43,7 @@ public class Input {
             userInt = Integer.valueOf(userInput); // IntelliJ suggests using parseInt
         } catch (NumberFormatException e) {
             System.out.printf("\"%s\" is not a valid number. Please try again: ", userInput);
-            return getInt();
+            return this.getInt();
         }
 
         return userInt;
@@ -59,7 +59,7 @@ public class Input {
 
         if (userInt < min || userInt > max) {
             System.out.print("Sorry, that's not within the range. Please try again: ");
-            return getInt(min, max);
+            return this.getInt(min, max);
         } else {
             return userInt;
         }
@@ -67,7 +67,7 @@ public class Input {
 
     public int getInt(String prompt, int min, int max) {
         System.out.print(prompt);
-        return getInt(min, max);
+        return this.getInt(min, max);
     }
 
     public double getDouble() {
@@ -78,10 +78,15 @@ public class Input {
             userDouble = Double.valueOf(userInput);
         } catch (NumberFormatException e) {
             System.out.printf("\"%s\" is not valid. Please enter a decimal number: ", userInput);
-            return getDouble();
+            return this.getDouble();
         }
 
         return userDouble;
+    }
+
+    public double getDouble(String prompt) {
+        System.out.print(prompt);
+        return this.getDouble();
     }
 
     public double getDouble(double min, double max) {
