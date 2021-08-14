@@ -50,7 +50,7 @@ public class Input {
         double userDouble = this.getDouble();
 
         if (userDouble < min || userDouble > max) {
-            System.out.println("Sorry, that's not within the range.");
+            System.out.print("Sorry, that's not within the range. Please try again: ");
             return getDouble(min, max);
         } else {
             return userDouble;
@@ -59,7 +59,7 @@ public class Input {
 
     public double getDouble() {
         String userInput = this.getString();
-        Double userDouble;
+        double userDouble;
 
         try {
             userDouble = Double.valueOf(userInput);

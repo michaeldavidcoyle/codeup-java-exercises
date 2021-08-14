@@ -46,8 +46,15 @@ public class InputTest {
 //        int userInteger = input.getInt(1, 10);
 //        System.out.printf("Thank you, %d is between 1 and 10.%n", userInteger);
 
-        System.out.print("Please enter a decimal number: ");
-        double userDouble = input.getDouble();
+//        System.out.print("Please enter a decimal number: ");
+//        double userDouble = input.getDouble();
+//        System.out.printf("You chose %f. Thank you.%n", userDouble);
+
+        double minDouble = 0.000001;
+        double maxDouble = (minDouble + 7) * Math.PI;
+
+        System.out.printf("Please enter a decimal number from %f to %f: ", minDouble, maxDouble);
+        double userDouble = input.getDouble(minDouble, maxDouble);
         System.out.printf("You chose %f. Thank you.%n", userDouble);
     }
 }
