@@ -57,7 +57,10 @@ public class InputTest {
 //        double userDouble = input.getDouble(minDouble, maxDouble);
 //        System.out.printf("You chose %f. Thank you.%n", userDouble);
 
-        String userName = input.getString("What is your name? ");
-        System.out.printf("Hello, %s, nice to meet you.", userName);
+//        String userName = input.getString("What is your name? ");
+//        System.out.printf("Hello, %s, nice to meet you.", userName);
+
+        String userSentence = input.getSentence("Please enter a sentence: ");
+        System.out.printf("\"%s,\" eh? Interesting.", userSentence);
     }
 }

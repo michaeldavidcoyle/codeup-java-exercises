@@ -22,6 +22,11 @@ public class Input {
         return this.scanner.nextLine();
     }
 
+    public String getSentence(String prompt) {
+        System.out.print(prompt);
+        return this.scanner.nextLine();
+    }
+
     public boolean yesNo() {
         return getString().toLowerCase().contains("y");
     }
