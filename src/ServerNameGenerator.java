@@ -3,6 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ServerNameGenerator {
@@ -21,14 +22,12 @@ public class ServerNameGenerator {
         return stringsArray[ (int) (Math.random() * stringsArray.length) ];
     }
 
-    public static void generateWordFiles() throws IOException {
+    public static void generateAdjectivesFile() throws IOException {
         String directory = "data";
         String adjectives = "adjectives.txt";
-        String nouns = "nouns.txt";
 
         Path dataDirectory = Paths.get(directory);
         Path adjectivesFile = Paths.get(directory, adjectives);
-        Path nounsFile = Paths.get(directory, nouns);
 
         if (Files.notExists(dataDirectory)) {
             Files.createDirectories(dataDirectory);
@@ -36,6 +35,18 @@ public class ServerNameGenerator {
 
         if (Files.notExists(adjectivesFile)) {
             Files.createFile(adjectivesFile);
+        }
+    }
+
+    public static void generateNounsFile() throws IOException {
+        String directory = "data";
+        String nouns = "nouns.txt";
+
+        Path dataDirectory = Paths.get(directory);
+        Path nounsFile = Paths.get(directory, nouns);
+
+        if (Files.notExists(dataDirectory)) {
+            Files.createDirectories(dataDirectory);
         }
 
         if (Files.notExists(nounsFile)) {
@@ -48,7 +59,8 @@ public class ServerNameGenerator {
 //        System.out.println(serverName);
 
         try {
-            generateWordFiles();
+            generateAdjectivesFile();
+            generateNounsFile();
         } catch (IOException e) {
             System.out.printf("Oops, something happened: %s%n", e.getMessage());
         }
