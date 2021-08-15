@@ -11,7 +11,7 @@ public class ServerNameGenerator {
     };
 
     public static String getRandomString(String[] stringsArray) {
-        return stringsArray[ MethodsExercises.randomInteger(0, stringsArray.length - 1) ];
+        return stringsArray[ (int) (Math.random() * stringsArray.length) ];
     }
 
     public static void main(String[] args) {
