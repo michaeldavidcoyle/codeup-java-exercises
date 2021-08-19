@@ -89,8 +89,10 @@ public class ServerNameGenerator {
         boolean continues = true;
 
         do {
-            String serverName = getRandomString(adjectivesList) + '-' + getRandomString(nounsList);
-            System.out.println(serverName);
+            String randomAdjective = getRandomString(adjectivesList);
+            String randomNoun = getRandomString(nounsList);
+
+            System.out.printf("%s-%s%n", randomAdjective, randomNoun);
 
             continues = input.yesNo("Get another server name? [y/n] ");
         } while (continues);
