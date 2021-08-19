@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import util.Input;
 
 public class ServerNameGenerator {
 
@@ -80,12 +81,20 @@ public class ServerNameGenerator {
 
     public static void main(String[] args) {
 
+        Input input = new Input();
+
         List<String> adjectivesList = getAdjectives();
         List<String> nounsList = getNouns();
 
-        String serverName = getRandomString(adjectivesList) + '-' + getRandomString(nounsList);
-        System.out.println(serverName);
+        boolean continues = true;
 
-//        System.out.println("Success.");
+        do {
+            String serverName = getRandomString(adjectivesList) + '-' + getRandomString(nounsList);
+            System.out.println(serverName);
+
+            continues = input.yesNo("Get another server name? [y/n] ");
+        } while (continues);
+
+        System.out.println("Thanks for using Server Name Generator. Goodbye.");
     }
 }
