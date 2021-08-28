@@ -61,4 +61,26 @@ public class PizzaShop {
 
         return veggieChoices;
     }
+
+    public static ArrayList<String> selectMeats() {
+        ArrayList<String> meatChoices = new ArrayList<>();
+
+        boolean moreMeats;
+
+        do {
+            System.out.println("Meats options: ");
+
+            for (int i = 0; i < meats.length; i++) {
+                System.out.printf("%d - %s", i + 1, meats[i]);
+            }
+
+            int meatOption = input.getInt("Please choose a meat: ", 1, meats.length);
+
+            meatChoices.add(meats[meatOption - 1]);
+
+            moreMeats = input.yesNo("Add another meat? [y/n]");
+        } while(moreMeats);
+
+        return meatChoices;
+    }
 }
