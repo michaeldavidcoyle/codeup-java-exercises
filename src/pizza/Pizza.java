@@ -12,4 +12,37 @@ package pizza;
  */
 
 public class Pizza {
+    private String crust;
+    private String size;
+    private String[] toppings;
+
+    public Pizza(String crust, String size, String[] toppings) {
+        this.crust = crust;
+        this.size = size;
+        this.toppings = toppings;
+    }
+
+    public String getCrust() {
+        return crust;
+    }
+
+    public void setCrust(String crust) {
+        this.crust = crust;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String[] getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(String[] toppings) {
+        this.toppings = toppings;
+    }
 }
