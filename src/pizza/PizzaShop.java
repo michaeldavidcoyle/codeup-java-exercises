@@ -6,15 +6,15 @@ import util.Input;
 public class PizzaShop {
 
     private static ArrayList<Pizza> pizzas = new ArrayList<>();
-    private static String[] crusts = {"thin", "hand-tossed", "pan"};
-    private static String[] sizes = {"small", "medium", "large", "extra large"};
-    private static String[] meats = {
+    private static final String[] crusts = {"thin", "hand-tossed", "pan"};
+    private static final String[] sizes = {"small", "medium", "large", "extra large"};
+    private static final String[] meats = {
             "pepperoni", "italian sausage", "canadian bacon", "bacon", "ground beef", "anchovies"
     };
-    private static String[] veggies = {
+    private static final String[] veggies = {
             "mushrooms", "black olives", "bell peppers", "onions", "tomatoes", "jalepeños"
     };
-    private static Input input = new Input();
+    private static final Input input = new Input();
 
     public static String selectCrust() {
         System.out.println("\nCrust options: ");
