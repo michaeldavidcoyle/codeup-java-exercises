@@ -83,4 +83,19 @@ public class PizzaShop {
 
         return meatChoices;
     }
+
+    public static String[] selectToppings() {
+        ArrayList<String> allChoices = selectVeggies();
+        ArrayList<String> meatChoices = selectMeats();
+
+        allChoices.addAll(meatChoices);
+
+        String[] toppingChoices = new String[allChoices.size()];
+
+        for (int i = 0; i < toppingChoices.length; i++) {
+            toppingChoices[i] = allChoices.get(i);
+        }
+
+        return toppingChoices;
+    }
 }
