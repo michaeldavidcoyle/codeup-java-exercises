@@ -16,4 +16,15 @@ public class PizzaShop {
     };
     private static Input input = new Input();
 
+    public static String chooseCrust() {
+        System.out.println("Crust options: ");
+
+        for (int i = 0; i < crusts.length; i++) {
+            System.out.printf("%d - %s", i + 1, crusts[i]);
+        }
+
+        int crustOption = input.getInt("Please choose a crust: ", 1, crusts.length);
+
+        return crusts[ crustOption - 1 ];
+    }
 }
