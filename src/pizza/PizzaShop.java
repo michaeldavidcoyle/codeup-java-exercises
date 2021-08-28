@@ -5,7 +5,7 @@ import util.Input;
 
 public class PizzaShop {
 
-    private static ArrayList<Pizza> pizzas;
+    private static ArrayList<Pizza> pizzas = new ArrayList<>();
     private static String[] crusts = {"thin", "hand-tossed", "pan"};
     private static String[] sizes = {"small", "medium", "large", "extra large"};
     private static String[] meats = {
@@ -105,6 +105,22 @@ public class PizzaShop {
         String[] toppings = selectToppings();
 
         Pizza pizza = new Pizza(crust, size, toppings);
+
+        pizzas.add(pizza);
+    }
+
+    public static void printPizzas() {
+        String size;
+        String crust;
+        String toppings;
+
+        for (Pizza pizza : pizzas) {
+            size = pizza.getSize();
+            crust = pizza.getCrust();
+            toppings = String.join(", ", pizza.getToppings());
+
+            System.out.printf("One %s %s pizza with %s.%n", size, crust, toppings);
+        }
     }
 
     public static void main(String[] args) {
@@ -116,5 +132,7 @@ public class PizzaShop {
 
             morePizza = input.yesNo("Would you like another pizza? [y/n] ");
         } while (morePizza);
+
+        printPizzas();
     }
 }
