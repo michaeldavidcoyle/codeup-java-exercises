@@ -17,7 +17,7 @@ public class PizzaShop {
     private static final Input input = new Input();
 
     public static String selectCrust() {
-        System.out.println("\nCrust options: ");
+        System.out.println("\n---------Crust---------");
 
         for (int i = 0; i < crusts.length; i++) {
             System.out.printf("%d - %s%n", i + 1, crusts[i]);
@@ -29,7 +29,7 @@ public class PizzaShop {
     }
 
     public static String selectSize() {
-        System.out.println("\nSize options: ");
+        System.out.println("\n---------Size---------");
 
         for (int i = 0; i < sizes.length; i++) {
             System.out.printf("%d - %s%n", i + 1, sizes[i]);
@@ -46,7 +46,7 @@ public class PizzaShop {
         boolean moreVeggies;
 
         do {
-            System.out.println("\nVeggies options: ");
+            System.out.println("\n--------Veggies--------");
 
             for (int i = 0; i < veggies.length; i++) {
                 System.out.printf("%d - %s%n", i + 1, veggies[i]);
@@ -68,7 +68,7 @@ public class PizzaShop {
         boolean moreMeats;
 
         do {
-            System.out.println("\nMeats options: ");
+            System.out.println("\n---------Meats---------");
 
             for (int i = 0; i < meats.length; i++) {
                 System.out.printf("%d - %s%n", i + 1, meats[i]);
@@ -123,7 +123,7 @@ public class PizzaShop {
         String crust;
         String toppings;
 
-        System.out.println("\nYour order: ");
+        System.out.println("\n---------Order---------");
         for (Pizza pizza : pizzas) {
             size = pizza.getSize();
             crust = pizza.getCrust();
@@ -140,7 +140,7 @@ public class PizzaShop {
         do {
             orderPizza();
 
-            morePizza = input.yesNo("Would you like another pizza? [y/n] ");
+            morePizza = input.yesNo("\nWould you like another pizza? [y/n] ");
         } while (morePizza);
 
         printPizzas();
