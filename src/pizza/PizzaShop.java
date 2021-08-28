@@ -98,4 +98,12 @@ public class PizzaShop {
 
         return toppingChoices;
     }
+
+    public static void orderPizza() {
+        String crust = selectCrust();
+        String size = selectSize();
+        String[] toppings = selectToppings();
+
+        Pizza pizza = new Pizza(crust, size, toppings);
+    }
 }
