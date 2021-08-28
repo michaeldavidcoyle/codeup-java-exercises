@@ -85,10 +85,19 @@ public class PizzaShop {
     }
 
     public static String[] selectToppings() {
-        ArrayList<String> allChoices = selectVeggies();
-        ArrayList<String> meatChoices = selectMeats();
+        ArrayList<String> allChoices = new ArrayList<>();
 
-        allChoices.addAll(meatChoices);
+        boolean addVeggies = input.yesNo("\nAdd veggies? [y/n] ");
+
+        if (addVeggies) {
+            allChoices.addAll(selectVeggies());
+        }
+
+        boolean addMeats = input.yesNo("\nAdd meats? [y/n] ");
+
+        if (addMeats) {
+            allChoices.addAll(selectMeats());
+        }
 
         String[] toppingChoices = new String[allChoices.size()];
 
@@ -114,6 +123,7 @@ public class PizzaShop {
         String crust;
         String toppings;
 
+        System.out.println("\nYour order: ");
         for (Pizza pizza : pizzas) {
             size = pizza.getSize();
             crust = pizza.getCrust();
