@@ -17,10 +17,10 @@ public class PizzaShop {
     private static Input input = new Input();
 
     public static String selectCrust() {
-        System.out.println("Crust options: ");
+        System.out.println("\nCrust options: ");
 
         for (int i = 0; i < crusts.length; i++) {
-            System.out.printf("%d - %s", i + 1, crusts[i]);
+            System.out.printf("%d - %s%n", i + 1, crusts[i]);
         }
 
         int crustOption = input.getInt("Please choose a crust: ", 1, crusts.length);
@@ -29,10 +29,10 @@ public class PizzaShop {
     }
 
     public static String selectSize() {
-        System.out.println("Size options: ");
+        System.out.println("\nSize options: ");
 
         for (int i = 0; i < sizes.length; i++) {
-            System.out.printf("%d - %s", i + 1, sizes[i]);
+            System.out.printf("%d - %s%n", i + 1, sizes[i]);
         }
 
         int sizeOption = input.getInt("Please choose a size: ", 1, sizes.length);
@@ -46,17 +46,17 @@ public class PizzaShop {
         boolean moreVeggies;
 
         do {
-            System.out.println("Veggies options: ");
+            System.out.println("\nVeggies options: ");
 
             for (int i = 0; i < veggies.length; i++) {
-                System.out.printf("%d - %s", i + 1, veggies[i]);
+                System.out.printf("%d - %s%n", i + 1, veggies[i]);
             }
 
             int veggieOption = input.getInt("Please choose a veggie: ", 1, veggies.length);
 
             veggieChoices.add(veggies[veggieOption - 1]);
 
-            moreVeggies = input.yesNo("Add another veggie? [y/n]");
+            moreVeggies = input.yesNo("Add another veggie? [y/n] ");
         } while(moreVeggies);
 
         return veggieChoices;
@@ -68,17 +68,17 @@ public class PizzaShop {
         boolean moreMeats;
 
         do {
-            System.out.println("Meats options: ");
+            System.out.println("\nMeats options: ");
 
             for (int i = 0; i < meats.length; i++) {
-                System.out.printf("%d - %s", i + 1, meats[i]);
+                System.out.printf("%d - %s%n", i + 1, meats[i]);
             }
 
             int meatOption = input.getInt("Please choose a meat: ", 1, meats.length);
 
             meatChoices.add(meats[meatOption - 1]);
 
-            moreMeats = input.yesNo("Add another meat? [y/n]");
+            moreMeats = input.yesNo("Add another meat? [y/n] ");
         } while(moreMeats);
 
         return meatChoices;
@@ -105,5 +105,16 @@ public class PizzaShop {
         String[] toppings = selectToppings();
 
         Pizza pizza = new Pizza(crust, size, toppings);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to our Pizza Shop!");
+        boolean morePizza;
+
+        do {
+            orderPizza();
+
+            morePizza = input.yesNo("Would you like another pizza? [y/n] ");
+        } while (morePizza);
     }
 }
