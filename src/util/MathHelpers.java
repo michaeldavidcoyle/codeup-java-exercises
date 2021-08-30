@@ -41,6 +41,19 @@ public class MathHelpers {
         return true;
     }
 
+    public static int greatestCommonFactor(int firstInteger, int secondInteger) {
+        int greater = Math.max(firstInteger, secondInteger);
+        int lesser = Math.min(firstInteger, secondInteger);
+
+        for (int i = lesser; i > 1; i--) {
+            if (greater % i == 0 && lesser % i == 0) {
+                return i;
+            }
+        }
+
+        return 1;
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -48,13 +61,20 @@ public class MathHelpers {
 //
 //        System.out.printf("The prime factors of %d: %s", integer, factors.toString());
 
-        int primeCandidate = input.getInt("Enter integer to test if prime: ");
+//        int primeCandidate = input.getInt("Enter integer to test if prime: ");
+//
+//        if (isPrime(primeCandidate)) {
+//            System.out.printf("%d is prime.", primeCandidate);
+//        } else {
+//            ArrayList<Integer> factors = primeFactors(primeCandidate);
+//            System.out.printf("%d is composite. Its prime factors are %s", primeCandidate, factors.toString());
+//        }
 
-        if (isPrime(primeCandidate)) {
-            System.out.printf("%d is prime.", primeCandidate);
-        } else {
-            ArrayList<Integer> factors = primeFactors(primeCandidate);
-            System.out.printf("%d is composite. Its prime factors are %s", primeCandidate, factors.toString());
-        }
+        int firstInteger = input.getInt("Enter first integer: ");
+        int secondInteger = input.getInt("Enter second integer: ");
+
+        int gcf = greatestCommonFactor(firstInteger, secondInteger);
+
+        System.out.printf("Greatest common factor of %d and %d is %d", firstInteger, secondInteger, gcf);
     }
 }
