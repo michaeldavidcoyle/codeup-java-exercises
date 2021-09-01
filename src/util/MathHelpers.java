@@ -1,5 +1,6 @@
 package util;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class MathHelpers {
@@ -54,11 +55,21 @@ public class MathHelpers {
         return 1;
     }
 
-    public static long factorial(int integer) {
-        long product = 1L;
+//    public static long factorial(int integer) {
+//        long product = 1L;
+//
+//        for (int i = integer; i > 1; i--) {
+//            product *= i;
+//        }
+//
+//        return product;
+//    }
+
+    public static BigInteger factorial(int integer) {
+        BigInteger product = new BigInteger("1");
 
         for (int i = integer; i > 1; i--) {
-            product *= i;
+            product = product.multiply(BigInteger.valueOf(i));
         }
 
         return product;
@@ -112,9 +123,14 @@ public class MathHelpers {
 //
 //        System.out.printf("%d! = %d", integer, integerFactorial);
 
-        int integer = input.getInt("Enter an integer: ");
-        ArrayList<Integer> factors = factorize(integer);
+//        int integer = input.getInt("Enter an integer: ");
+//        ArrayList<Integer> factors = factorize(integer);
+//
+//        System.out.printf("Factors of %d are: %s", integer, factors.toString());
 
-        System.out.printf("Factors of %d are: %s", integer, factors.toString());
+        int integer = input.getInt("Enter an integer: ");
+        BigInteger integerFactorial = factorial(integer);
+
+        System.out.printf("%d! = %d", integer, integerFactorial);
     }
 }
