@@ -54,6 +54,16 @@ public class MathHelpers {
         return 1;
     }
 
+    public static long factorial(int integer) {
+        long product = 1L;
+
+        for (int i = integer; i > 1; i--) {
+            product *= i;
+        }
+
+        return product;
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -70,11 +80,16 @@ public class MathHelpers {
 //            System.out.printf("%d is composite. Its prime factors are %s", primeCandidate, factors.toString());
 //        }
 
-        int firstInteger = input.getInt("Enter first integer: ");
-        int secondInteger = input.getInt("Enter second integer: ");
+//        int firstInteger = input.getInt("Enter first integer: ");
+//        int secondInteger = input.getInt("Enter second integer: ");
+//
+//        int gcf = greatestCommonFactor(firstInteger, secondInteger);
+//
+//        System.out.printf("Greatest common factor of %d and %d is %d", firstInteger, secondInteger, gcf);
 
-        int gcf = greatestCommonFactor(firstInteger, secondInteger);
+        int integer = input.getInt("Enter an integer from 1 to 20: ", 1, 20);
+        long integerFactorial = factorial(integer);
 
-        System.out.printf("Greatest common factor of %d and %d is %d", firstInteger, secondInteger, gcf);
+        System.out.printf("%d! = %d", integer, integerFactorial);
     }
 }
