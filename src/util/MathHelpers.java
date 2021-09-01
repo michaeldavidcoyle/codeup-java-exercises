@@ -64,6 +64,26 @@ public class MathHelpers {
         return product;
     }
 
+    public static ArrayList<Integer> factorize(int integer) {
+        ArrayList<Integer> factors = new ArrayList<>();
+        final double SQRT = Math.sqrt((double) integer);
+
+        for (int i = 2; i < SQRT; i++) {
+            if (integer % i == 0) factors.add(i);
+        }
+
+        int last = factors.size() - 1;
+        int intSqrt = (int) SQRT;
+
+        if (intSqrt == SQRT) factors.add(intSqrt);
+
+        for (int i = last; i >= 0; i--) {
+            factors.add(integer / factors.get(i));
+        }
+
+        return factors;
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -87,9 +107,14 @@ public class MathHelpers {
 //
 //        System.out.printf("Greatest common factor of %d and %d is %d", firstInteger, secondInteger, gcf);
 
-        int integer = input.getInt("Enter an integer from 1 to 20: ", 1, 20);
-        long integerFactorial = factorial(integer);
+//        int integer = input.getInt("Enter an integer from 1 to 20: ", 1, 20);
+//        long integerFactorial = factorial(integer);
+//
+//        System.out.printf("%d! = %d", integer, integerFactorial);
 
-        System.out.printf("%d! = %d", integer, integerFactorial);
+        int integer = input.getInt("Enter an integer: ");
+        ArrayList<Integer> factors = factorize(integer);
+
+        System.out.printf("Factors of %d are: %s", integer, factors.toString());
     }
 }
