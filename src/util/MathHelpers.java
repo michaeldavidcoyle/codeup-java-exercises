@@ -95,6 +95,18 @@ public class MathHelpers {
         return factors;
     }
 
+    public static int sumDigits(long n) {
+        String nString = String.valueOf(n);
+
+        int sum = 0;
+
+        for (int i = 0; i < nString.length(); i++) {
+            sum += Integer.parseInt(String.valueOf(nString.charAt(i)));
+        }
+
+        return sum;
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -128,9 +140,13 @@ public class MathHelpers {
 //
 //        System.out.printf("Factors of %d are: %s", integer, factors.toString());
 
-        int integer = input.getInt("Enter an integer: ");
-        BigInteger integerFactorial = factorial(integer);
+//        int integer = input.getInt("Enter an integer: ");
+//        BigInteger integerFactorial = factorial(integer);
+//
+//        System.out.printf("%d! = %d", integer, integerFactorial);
 
-        System.out.printf("%d! = %d", integer, integerFactorial);
+        long testInteger = 1110010001100110101L;
+        int sum = sumDigits(testInteger);
+        System.out.printf("Sum of the digits of %d is %d.", testInteger, sum);
     }
 }
