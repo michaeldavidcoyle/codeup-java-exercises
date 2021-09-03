@@ -107,6 +107,10 @@ public class MathHelpers {
         return sum;
     }
 
+    public static double percentError(double observed, double expected) {
+        return (Math.abs(observed - expected) / expected) * 100;
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -145,8 +149,15 @@ public class MathHelpers {
 //
 //        System.out.printf("%d! = %d", integer, integerFactorial);
 
-        long testInteger = 1110010001100110101L;
-        int sum = sumDigits(testInteger);
-        System.out.printf("Sum of the digits of %d is %d.", testInteger, sum);
+//        long testInteger = 1110010001100110101L;
+//        int sum = sumDigits(testInteger);
+//        System.out.printf("Sum of the digits of %d is %d.", testInteger, sum);
+
+        double observed = input.getDouble("Enter observed value: ");
+        double expected = input.getDouble("Enter expected value: ");
+
+        double percentErr = percentError(observed, expected);
+
+        System.out.printf("Percent Error: %f%%", percentErr);
     }
 }
