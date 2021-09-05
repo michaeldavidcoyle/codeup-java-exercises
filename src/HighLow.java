@@ -1,4 +1,5 @@
 import util.Input;
+import util.MathHelpers;
 
 public class HighLow {
     public static Input input = new Input();
@@ -25,9 +26,11 @@ public class HighLow {
         int myNumber = randomInteger(min, max);
 
         int guessCount = 0;
-//        int maxGuessCount = 10;
 
-//        boolean gameIsLost = false;
+        // Optimum play suggests an average of log2(max) guesses.
+        double maxGuessCount = Math.ceil(MathHelpers.logBaseN(2, max) * 1.25);
+
+        boolean gameIsLost = false;
 
         System.out.printf("I've selected a number between 1 and %d.%n", max);
 
@@ -37,20 +40,25 @@ public class HighLow {
             guess = input.getInt("Guess my number: ", min, max);
             guessCount++;
 
-//            if (guessCount == maxGuessCount && guess != myNumber) {
-//                gameIsLost = true;
-//                break;
-//            }
+            if (guessCount == maxGuessCount && guess != myNumber) {
+                gameIsLost = true;
+                break;
+            }
 
             giveHint(guess, myNumber);
 
         } while (guess != myNumber);
 
-//        if (gameIsLost) {
-//            System.out.printf("Sorry, 10 guesses is the limit. My number was %d.%n", myNumber);
-//        } else {
+        if (gameIsLost) {
+            System.out.printf(
+                    "Sorry, %d guesses is the limit for a range of 1 to %d.%nMy number was %d.%n",
+                    (int) maxGuessCount,
+                    max,
+                    myNumber
+            );
+        } else {
             System.out.println("Good guess!");
             System.out.printf("My number was %d. You made %d guesses.%n", myNumber, guessCount);
-//        }
+        }
     }
 }
