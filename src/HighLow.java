@@ -1,6 +1,8 @@
-import java.lang.reflect.Method;
+import util.Input;
 
 public class HighLow {
+    public static Input input = new Input;
+
     public static void giveHint(int guess, int actual) {
         if (guess < actual) {
             System.out.println("Higher");
