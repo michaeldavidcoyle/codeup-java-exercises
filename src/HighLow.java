@@ -16,8 +16,11 @@ public class HighLow {
     }
 
     public static void main(String[] args) {
+        System.out.println("Let's play the High/Low Game!");
+        System.out.println("The minimum number is always 1.");
+
         int min = 1;
-        int max = input.getInt("Enter a maximum for the High/Low Game: ");
+        int max = input.getInt("Choose a maximum number: ");
 
         int myNumber = randomInteger(min, max);
 
@@ -25,6 +28,9 @@ public class HighLow {
 //        int maxGuessCount = 10;
 
 //        boolean gameIsLost = false;
+
+        System.out.printf("I've selected a number between 1 and %d.%n", max);
+
         int guess;
 
         do {
