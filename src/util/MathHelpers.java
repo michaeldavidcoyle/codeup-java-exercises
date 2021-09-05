@@ -111,6 +111,10 @@ public class MathHelpers {
         return (Math.abs(observed - expected) / expected) * 100;
     }
 
+    public static double logBaseN(double base, double operand) {
+        return Math.log(operand) / Math.log(base);
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -153,11 +157,17 @@ public class MathHelpers {
 //        int sum = sumDigits(testInteger);
 //        System.out.printf("Sum of the digits of %d is %d.", testInteger, sum);
 
-        double observed = input.getDouble("Enter observed value: ");
-        double expected = input.getDouble("Enter expected value: ");
+//        double observed = input.getDouble("Enter observed value: ");
+//        double expected = input.getDouble("Enter expected value: ");
+//
+//        double percentErr = percentError(observed, expected);
+//
+//        System.out.printf("Percent Error: %f%%", percentErr);
 
-        double percentErr = percentError(observed, expected);
+        double base = input.getDouble("Enter log base: ");
+        double operand = input.getDouble("Enter log operand: ");
+        double log = logBaseN(base, operand);
 
-        System.out.printf("Percent Error: %f%%", percentErr);
+        System.out.printf("log base %.0f of %.0f = %f", base, operand, log);
     }
 }
