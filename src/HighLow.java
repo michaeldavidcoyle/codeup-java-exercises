@@ -9,8 +9,12 @@ public class HighLow {
         }
     }
 
+    public static int randomInteger(int min, int max) {
+        return (int) (Math.random() * (max - min + 1) + min);
+    }
+
     public static void main(String[] args) {
-        int myNumber = MethodsExercises.randomInteger(1, 100);
+        int myNumber = randomInteger(1, 100);
         int guessCount = 0;
         int maxGuessCount = 10;
         boolean gameIsLost = false;
