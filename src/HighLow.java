@@ -28,7 +28,8 @@ public class HighLow {
         int guessCount = 0;
 
         // Optimum play suggests an average of log2(max) guesses.
-        double maxGuessCount = Math.ceil(MathHelpers.logBaseN(2, max) * 1.25);
+        double averageGuesses = MathHelpers.logBaseN(2, max);
+        double maxGuessCount = Math.ceil(averageGuesses * 1.25);
 
         boolean gameIsLost = false;
 
@@ -58,7 +59,12 @@ public class HighLow {
             );
         } else {
             System.out.println("Good guess!");
-            System.out.printf("My number was %d. You made %d guesses.%n", myNumber, guessCount);
+            System.out.printf(
+                    "My number was %d.%nYou made %d guesses.%nAverage for this range is %d guesses.",
+                    myNumber,
+                    guessCount,
+                    Math.round(averageGuesses)
+            );
         }
     }
 }
