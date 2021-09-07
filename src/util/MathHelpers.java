@@ -131,6 +131,13 @@ public class MathHelpers {
         return sequence.get(index);
     }
 
+    public static String toOrdinal(int cardinal) {
+        String[] suffixes = {"th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"};
+        String suffix = (cardinal < 11 || cardinal > 13) ? suffixes[cardinal % 10] : "th";
+
+        return cardinal + suffix;
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -186,8 +193,12 @@ public class MathHelpers {
 //
 //        System.out.printf("log base %.0f of %.0f = %f", base, operand, log);
 
-        for (int i = 0; i < 25; i++) {
-            System.out.printf("%d, ", nthFibonacci(i));
+//        for (int i = 0; i < 25; i++) {
+//            System.out.printf("%d, ", nthFibonacci(i));
+//        }
+
+        for (int i = 1; i <= 100; i++) {
+            System.out.printf("%s%n", toOrdinal(i));
         }
     }
 }
