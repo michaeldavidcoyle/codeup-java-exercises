@@ -115,6 +115,22 @@ public class MathHelpers {
         return Math.log(operand) / Math.log(base);
     }
 
+    public static long nthFibonacci(int index) {
+        ArrayList<Integer> sequence = new ArrayList<>();
+
+        sequence.add(0);
+        sequence.add(1);
+
+        while (sequence.size() <= index) {
+            int last = sequence.get(sequence.size() - 1);
+            int nextToLast = sequence.get(sequence.size() - 2);
+
+            sequence.add(last + nextToLast);
+        }
+
+        return sequence.get(index);
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -164,10 +180,14 @@ public class MathHelpers {
 //
 //        System.out.printf("Percent Error: %f%%", percentErr);
 
-        double base = input.getDouble("Enter log base: ");
-        double operand = input.getDouble("Enter log operand: ");
-        double log = logBaseN(base, operand);
+//        double base = input.getDouble("Enter log base: ");
+//        double operand = input.getDouble("Enter log operand: ");
+//        double log = logBaseN(base, operand);
+//
+//        System.out.printf("log base %.0f of %.0f = %f", base, operand, log);
 
-        System.out.printf("log base %.0f of %.0f = %f", base, operand, log);
+        for (int i = 0; i < 25; i++) {
+            System.out.printf("%d, ", nthFibonacci(i));
+        }
     }
 }
