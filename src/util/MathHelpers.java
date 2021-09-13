@@ -138,6 +138,10 @@ public class MathHelpers {
         return cardinal + suffix;
     }
 
+    public static BigInteger combinations(int n, int k) {
+        return factorial(n).divide(factorial(k).multiply(factorial(n - k)));
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -197,8 +201,10 @@ public class MathHelpers {
 //            System.out.printf("%d, ", nthFibonacci(i));
 //        }
 
-        for (int i = 1; i <= 100; i++) {
-            System.out.printf("%s%n", toOrdinal(i));
-        }
+//        for (int i = 1; i <= 100; i++) {
+//            System.out.printf("%s%n", toOrdinal(i));
+//        }
+
+        System.out.println(combinations(40, 20));
     }
 }
