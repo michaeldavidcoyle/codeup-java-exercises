@@ -142,6 +142,29 @@ public class MathHelpers {
         return factorial(n).divide(factorial(k).multiply(factorial(n - k)));
     }
 
+    public static boolean isNarcissistic(int number) {
+        int numberCopy = number;
+
+        ArrayList<Integer> digits = new ArrayList<>();
+
+        while (numberCopy > 0) {
+            int digit = numberCopy % 10;
+
+            digits.add(digit);
+
+            numberCopy = (numberCopy - digit) / 10;
+        }
+
+        int sum = 0;
+        int exp = digits.size();
+
+        for (int d : digits) {
+            sum += (int) Math.pow(d, exp);
+        }
+
+        return sum == number;
+    }
+
     public static void main(String[] args) {
 //        int integer = input.getInt("Enter an integer to factorize: ");
 //
@@ -205,6 +228,17 @@ public class MathHelpers {
 //            System.out.printf("%s%n", toOrdinal(i));
 //        }
 
-        System.out.println(combinations(40, 20));
+//        System.out.println(combinations(40, 20));
+
+//        Input input = new Input();
+//        int userInteger = input.getInt("Enter an integer: ");
+//
+//        if (isNarcissistic(userInteger)) {
+//            System.out.printf("%d is narcissistic", userInteger);
+//        }
+
+        for (int i = 1; i < 100000; i++) {
+            if (isNarcissistic(i)) System.out.println(i);
+        }
     }
 }
